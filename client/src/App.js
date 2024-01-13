@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import BookingForm from './BookingForm';
 import SearchForm from './SearchForm';
+import RescheduleForm from './RescheduleForm';
 import './App.css';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
       <BookingForm />
       <h2>Search Appointments</h2>
       <SearchForm />
+      <h2>Reschedule Appointment</h2>
+      <RescheduleForm />
     </div>
   );
 }
