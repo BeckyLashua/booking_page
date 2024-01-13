@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CustomInput.css';
 
 function CustomInput({type, id, name, value, onChange}) {
   return (

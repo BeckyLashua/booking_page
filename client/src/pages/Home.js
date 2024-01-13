@@ -20,7 +20,7 @@ function Home() {
         Book an Appointment
       </button><br />
       <button onClick={handleSearchClick}>
-        Search Your Booked Appointments
+        Find Your Booked Appointments
       </button>
     </div>
   );

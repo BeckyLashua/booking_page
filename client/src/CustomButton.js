@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CustomButton.css';
 
 function CustomButton({text, type, onClick}) {
   return (

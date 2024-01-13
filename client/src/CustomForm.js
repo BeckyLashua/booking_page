@@ -1,5 +1,6 @@
 
 //import React, { useState } from 'react';
+import './CustomForm.css';
 
 function CustomForm({ onSubmit, children, buttonText }) {
   return (

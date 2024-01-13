@@ -4,6 +4,7 @@ import CustomLabel from './CustomLabel';
 import CustomInput from './CustomInput';
 import CustomButton from './CustomButton';
 //import CustomForm from './CustomForm';
+import './BookingForm.css';
 
 function BookingForm(props) {
   const [firstName, setFirstName] = useState('');

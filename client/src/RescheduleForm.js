@@ -4,6 +4,7 @@ import CustomLabel from './CustomLabel';
 import CustomInput from './CustomInput';
 import CustomButton from './CustomButton';
 //import CustomForm from './CustomForm';
+import './RescheduleForm.css';
 
 function RescheduleForm(props) {
   const [firstName, setFirstName] = useState('');
