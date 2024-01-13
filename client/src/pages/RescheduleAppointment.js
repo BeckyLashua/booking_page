@@ -4,10 +4,7 @@ import './RescheduleAppointment.css';
 
 function RescheduleAppointment() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Appointment Scheduler</h1>
-      </header>
+    <div>
       <h2>Reschedule Appointment</h2>
       <RescheduleForm />
     </div>

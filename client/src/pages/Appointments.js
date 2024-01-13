@@ -4,10 +4,7 @@ import './Appointments.css';
 
 function Appointments() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Appointment Scheduler</h1>
-      </header>
+    <div>
       <h2>Your Appointments</h2>
       <DisplayList />
     </div>

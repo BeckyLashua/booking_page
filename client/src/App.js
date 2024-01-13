@@ -10,15 +10,20 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/book" element={<BookAppointment />} />
-        <Route exact path="/reschedule" element={<RescheduleAppointment />} />
-        <Route exact path="/confirm" element={<ConfirmAppointment />} />
-        <Route exact path="/appointments" element={<Appointments />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <header className="App-header">
+        <h1>Appointment Scheduler</h1>
+      </header>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/book" element={<BookAppointment />} />
+          <Route exact path="/reschedule" element={<RescheduleAppointment />} />
+          <Route exact path="/confirm" element={<ConfirmAppointment />} />
+          <Route exact path="/appointments" element={<Appointments />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
