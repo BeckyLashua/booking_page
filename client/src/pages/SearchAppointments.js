@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import BookingForm from '../BookingForm';
+import SearchForm from '../SearchForm';
 import { useNavigate } from 'react-router-dom';
-import './BookAppointment.css';
+import './SearchAppointments.css';
 
-function BookAppointment() {
+function SearchAppointments() {
   let navigate = useNavigate();
 
   function handleGoBackClick() {
@@ -17,10 +17,10 @@ function BookAppointment() {
           Go Back
         </button><br />
       </div>
-      <h2>Book an Appointment</h2>
-      <BookingForm />
+      <h2>Find Your Appointments</h2>
+      <SearchForm />
     </div>
   );
 }
 
-export default BookAppointment;
+export default SearchAppointments;

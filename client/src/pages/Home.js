@@ -11,7 +11,7 @@ function Home() {
   }
 
   function handleSearchClick() {
-    navigate('/appointments');
+    navigate('/findappointments');
   }
 
   return (

@@ -6,6 +6,7 @@ import BookAppointment from './pages/BookAppointment';
 import RescheduleAppointment from './pages/RescheduleAppointment';
 import ConfirmAppointment from './pages/ConfirmAppointment';
 import Appointments from './pages/Appointments';
+import SearchAppointments from './pages/SearchAppointments';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/reschedule" element={<RescheduleAppointment />} />
           <Route exact path="/confirm" element={<ConfirmAppointment />} />
           <Route exact path="/appointments" element={<Appointments />} />
+          <Route exact path="/findappointments" element={<SearchAppointments />} />
         </Routes>
       </Router>
     </div>
