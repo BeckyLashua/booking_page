@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CustomLabel from './CustomLabel';
 import CustomInput from './CustomInput';
 import CustomButton from './CustomButton';
+import TimeInput from './TimeInput';
 //import CustomForm from './CustomForm';
 import './BookingForm.css';
 
@@ -85,12 +86,15 @@ function BookingForm(props) {
         onChange={handleDateChange}
       /><br />
       <CustomLabel text="Preferred Time" htmlFor="time" />
-      <CustomInput
+      <TimeInput
         type="time"
         id="time"
         name="time"
         value={time}
         onChange={handleTimeChange}
+        min="09:00"
+        max="19:00"
+        step="3600"
       /><br />
       <CustomButton type="submit" onSubmit={handleSubmit} text="Book Appointment" />
     </form>
