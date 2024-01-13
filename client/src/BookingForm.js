@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CustomLabel from './CustomLabel';
 import CustomInput from './CustomInput';
 import CustomButton from './CustomButton';
+//import CustomForm from './CustomForm';
 
 function BookingForm(props) {
   const [firstName, setFirstName] = useState('');
@@ -86,11 +87,11 @@ function BookingForm(props) {
       <CustomInput
         type="time"
         id="time"
-        date="date"
+        name="time"
         value={time}
         onChange={handleTimeChange}
       /><br />
-      <CustomButton type="submit" onSubmit={handleSubmit} text="Submit" />
+      <CustomButton type="submit" onSubmit={handleSubmit} text="Book Appointment" />
     </form>
   );
 }
