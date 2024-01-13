@@ -13,7 +13,7 @@ function BookingForm(props) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  //const [time, setTime] = useState('');
   
   const handleFirstNameChange = function(event) {
     setFirstName(event.target.value);
@@ -35,9 +35,9 @@ function BookingForm(props) {
     setDate(event.target.value);
   };
 
-  const handleTimeChange = function(event) {
+  /*const handleTimeChange = function(event) {
     setTime(event.target.value);
-  };
+  };*/
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -85,17 +85,7 @@ function BookingForm(props) {
         value={date}
         onChange={handleDateChange}
       /><br />
-      <CustomLabel text="Preferred Time" htmlFor="time" />
-      <TimeInput
-        type="time"
-        id="time"
-        name="time"
-        value={time}
-        onChange={handleTimeChange}
-        min="09:00"
-        max="19:00"
-        step="3600"
-      /><br />
+      <TimeInput/><br />
       <CustomButton type="submit" onSubmit={handleSubmit} text="Book Appointment" />
     </form>
   );
