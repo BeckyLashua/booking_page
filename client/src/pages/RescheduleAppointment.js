@@ -7,7 +7,7 @@ function RescheduleAppointment() {
   let navigate = useNavigate();
 
   function handleGoBackClick() {
-    navigate('/');
+    navigate('/appointments');
   }
   return (
     <div>
