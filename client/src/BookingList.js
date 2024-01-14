@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import BookingItem from './BookingItem';
 import './BookingList.css';
+import BookingItemCard from './BookingItemCard';
 
 function BookingList( { appts } ) {
   return (
     <div>
       <ul>
         {appts.map((appt) => (
-          <BookingItem appt = {appt}/>
+          <BookingItemCard appt = {appt}/>
         ))}
       </ul>
     </div>

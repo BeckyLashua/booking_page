@@ -7,7 +7,7 @@ function Appointments() {
   let navigate = useNavigate();
 
   function handleGoBackClick() {
-    navigate('/findappointments');
+    navigate('/manage');
   }
 
   let appts = [

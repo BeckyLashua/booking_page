@@ -11,7 +11,7 @@ function Home() {
   }
 
   function handleSearchClick() {
-    navigate('/findappointments');
+    navigate('/manage');
   }
 
   return (
@@ -20,7 +20,7 @@ function Home() {
         Book an Appointment
       </button><br />
       <button onClick={handleSearchClick}>
-        Find Your Booked Appointments
+        Manage Your Appointments
       </button>
     </div>
   );

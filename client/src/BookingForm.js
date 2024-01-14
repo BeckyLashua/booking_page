@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CustomLabel from './CustomLabel';
 import CustomInput from './CustomInput';
 import CustomButton from './CustomButton';
@@ -8,6 +9,8 @@ import TimeInput from './TimeInput';
 import './BookingForm.css';
 
 function BookingForm(props) {
+  let navigate = useNavigate();
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -42,7 +45,10 @@ function BookingForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Add form submission logic here
+    // Go to Confirmation Page for Now
+    navigate('/confirm');
   };
+
   return (
     <form>
       <CustomLabel text="First Name" htmlFor="first_name"/>
