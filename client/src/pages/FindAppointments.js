@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchForm from '../SearchForm';
 import { useNavigate } from 'react-router-dom';
-import './SearchAppointments.css';
+import './FindAppointments.css';
 
 function SearchAppointments() {
   let navigate = useNavigate();
