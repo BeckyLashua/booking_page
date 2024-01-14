@@ -1,10 +1,6 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CustomLabel from './CustomLabel';
-import CustomInput from './CustomInput';
-import CustomButton from './CustomButton';
-//import CustomForm from './CustomForm';
 import './SearchForm.css';
 
 function SearchForm(props) {
@@ -23,8 +19,8 @@ function SearchForm(props) {
   };
   return (
     <form>
-      <CustomLabel text="Email" htmlFor="email" />
-      <CustomInput
+      <label htmlFor="email">Email</label>
+      <input
         type="email"
         id="email"
         name="email"

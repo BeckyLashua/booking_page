@@ -1,98 +1,77 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CustomLabel from './CustomLabel';
-import CustomInput from './CustomInput';
-import CustomButton from './CustomButton';
 import TimeInput from './TimeInput';
-//import CustomForm from './CustomForm';
 import './BookingForm.css';
 
 function BookingForm(props) {
   let navigate = useNavigate();
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [date, setDate] = useState('');
-  //const [time, setTime] = useState('');
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    date: ''
+  });
   
-  const handleFirstNameChange = function(event) {
-    setFirstName(event.target.value);
+  const handleChange = function(event) {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
-
-  const handleLastNameChange = function(event) {
-    setLastName(event.target.value);
-  };
-
-  const handleEmailChange = function(event) {
-    setEmail(event.target.value);
-  };
-
-  const handlePhoneChange = function(event) {
-    setPhone(event.target.value);
-  };
-
-  const handleDateChange = function(event) {
-    setDate(event.target.value);
-  };
-
-  /*const handleTimeChange = function(event) {
-    setTime(event.target.value);
-  };*/
   
   const handleSubmit = (event) => {
     event.preventDefault();
     // Add form submission logic here
     // Go to Confirmation Page for Now
+    console.log(formData);
     navigate('/confirm');
   };
 
   return (
     <form>
-      <CustomLabel text="First Name" htmlFor="first_name"/>
-      <CustomInput 
+      <label htmlFor="first_name">First Name</label>
+      <input
         type="text"
-        id="first_name"
-        name="name"
-        value={firstName}
-        onChange={handleFirstNameChange}
+        id="firstName"
+        name="firstName"
+        value={formData.firstName}
+        onChange={handleChange}
       /><br />
-      <CustomLabel text="Last Name" htmlFor="last_name" />
-      <CustomInput 
+      <label htmlFor="last_name">Last Name</label>
+      <input 
         type="text"
-        id="last_name"
-        name="last_name"
-        value={lastName}
-        onChange={handleLastNameChange}
+        id="lastName"
+        name="lastName"
+        value={formData.lastName}
+        onChange={handleChange}
       /><br />
-      <CustomLabel text="Email" htmlFor="email" />
-      <CustomInput
+      <label htmlFor="email">Email</label> 
+      <input
         type="email"
         id="email"
         name="email"
-        value={email}
-        onChange={handleEmailChange}
+        value={formData.email}
+        onChange={handleChange}
       /><br />
-      <CustomLabel text="Phone" htmlFor="phone" />
-      <CustomInput
+      <label htmlFor="phone">Phone</label> 
+      <input
         type="tel"
         id="phone"
         name="phone"
-        value={phone}
-        onChange={handlePhoneChange}
+        value={formData.phone}
+        onChange={handleChange}
       /><br />
-      <CustomLabel text="Preferred Date" htmlFor="date" />
-      <CustomInput
+      <label htmlFor="date">Preferred Date</label>
+      <input
         type="date"
         id="date"
         name="date"
-        value={date}
-        onChange={handleDateChange}
+        value={formData.date}
+        onChange={handleChange}
       /><br />
       <TimeInput/><br />
-      <CustomButton type="submit" onSubmit={handleSubmit} text="Book Appointment" />
+      <button type="submit" onSubmit={handleSubmit}>Book Appointment</button>
     </form>
   );
 }

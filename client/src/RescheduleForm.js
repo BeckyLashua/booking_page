@@ -1,9 +1,5 @@
 
 import React, { useState } from 'react';
-import CustomLabel from './CustomLabel';
-import CustomInput from './CustomInput';
-import CustomButton from './CustomButton';
-//import CustomForm from './CustomForm';
 import './RescheduleForm.css';
 
 function RescheduleForm(props) {
@@ -44,23 +40,23 @@ function RescheduleForm(props) {
   };
   return (
     <form>
-      <CustomLabel text="New Preferred Date" htmlFor="date" />
-      <CustomInput
+      <label htmlFor="date">New Preferred Date</label>
+      <input
         type="date"
         id="date"
         name="date"
         value={date}
         onChange={handleDateChange}
       /><br />
-      <CustomLabel text="New Preferred Time" htmlFor="time" />
-      <CustomInput
+      <label htmlFor="time">New Preferred Time</label>
+      <input
         type="time"
         id="time"
         name="time"
         value={time}
         onChange={handleTimeChange}
       /><br />
-      <CustomButton type="submit" onSubmit={handleSubmit} text="Reschedule Appointment" />
+      <button type="submit" onSubmit={handleSubmit}>Reschedule Appointment</button>
     </form>
   );
 }
