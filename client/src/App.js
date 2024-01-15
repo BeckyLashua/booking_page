@@ -8,6 +8,8 @@ import ConfirmAppointment from './pages/ConfirmAppointment';
 import Appointments from './pages/Appointments';
 import ManageAppointments from './pages/ManageAppointments';
 import './App.css';
+import LanguageToggle from './LanguageToggle';
+//import i18n from './i18n';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
       <header className="App-header">
         <h1>Appointment Scheduler</h1>
       </header>
+      <div>
+        <LanguageToggle />
+      </div>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />

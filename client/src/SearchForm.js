@@ -28,7 +28,7 @@ function SearchForm(props) {
         value={email}
         onChange={handleEmailChange}
       /><br />
-      <button class='form-button' onClick={handleSubmit}>Manage Your Appointments</button>
+      <button class='form-button' onClick={handleSubmit}>Search</button>
     </form>
   );
 }
