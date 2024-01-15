@@ -13,12 +13,14 @@ function ManageAppointments() {
   return (
     <div>
       <div>
-        <button onClick={handleGoBackClick}>
+        <button class='return-button'  onClick={handleGoBackClick}>
           Go Back
         </button><br />
       </div>
-      <h2>Manage Your Appointments</h2>
-      <SearchForm />
+      <div class='div-wrapper'>
+        <h2>Manage Your Appointments</h2>
+        <SearchForm />
+      </div>
     </div>
   );
 }

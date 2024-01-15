@@ -26,8 +26,8 @@ function TimeInput({min, max, increment}) {
 
   return (
     <div>
-      <label htmlFor="time">Preferred Time</label>
-        <select value={selectedTime} onChange={handleChange}>
+      <label class='form-label' htmlFor="time">Appointment Time</label><br />
+        <select class='form-input' value={selectedTime} onChange={handleChange}>
           {timeOptions.map(time => (
             <option key={time} value={time}>{time}</option>
           ))}

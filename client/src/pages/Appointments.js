@@ -19,7 +19,7 @@ function Appointments() {
   return (
     <div>
       <div>
-        <button onClick={handleGoBackClick}>
+        <button class='return-button' onClick={handleGoBackClick}>
           Go Back
         </button><br />
       </div>

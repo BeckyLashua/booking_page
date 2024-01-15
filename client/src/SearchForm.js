@@ -19,15 +19,16 @@ function SearchForm(props) {
   };
   return (
     <form>
-      <label htmlFor="email">Email</label>
+      <label class='form-label' htmlFor="email">Email</label>
       <input
+        class='form-input'
         type="email"
         id="email"
         name="email"
         value={email}
         onChange={handleEmailChange}
       /><br />
-      <button onClick={handleSubmit}>Manage Your Appointments</button>
+      <button class='form-button' onClick={handleSubmit}>Manage Your Appointments</button>
     </form>
   );
 }

@@ -29,41 +29,46 @@ function BookingForm(props) {
   };
 
   return (
-    <form>
-      <label htmlFor="first_name">First Name</label>
+    <form class='div-wrapper'>
+      <label class='form-label' htmlFor="first_name">First Name</label><br />
       <input
+        class='form-input'
         type="text"
         id="firstName"
         name="firstName"
         value={formData.firstName}
         onChange={handleChange}
       /><br />
-      <label htmlFor="last_name">Last Name</label>
+      <label class='form-label' htmlFor="last_name">Last Name</label><br />
       <input 
+        class='form-input'
         type="text"
         id="lastName"
         name="lastName"
         value={formData.lastName}
         onChange={handleChange}
       /><br />
-      <label htmlFor="email">Email</label> 
+      <label class='form-label' htmlFor="email">Email</label><br /> 
       <input
+        class='form-input'
         type="email"
         id="email"
         name="email"
         value={formData.email}
         onChange={handleChange}
       /><br />
-      <label htmlFor="phone">Phone</label> 
+      <label class='form-label' htmlFor="phone">Phone</label><br /> 
       <input
+        class='form-input'
         type="tel"
         id="phone"
         name="phone"
         value={formData.phone}
         onChange={handleChange}
       /><br />
-      <label htmlFor="date">Preferred Date</label>
+      <label class='form-label' htmlFor="date">Appointment Date</label><br />
       <input
+        class='form-input'
         type="date"
         id="date"
         name="date"
@@ -71,7 +76,7 @@ function BookingForm(props) {
         onChange={handleChange}
       /><br />
       <TimeInput/><br />
-      <button type="submit" onSubmit={handleSubmit}>Book Appointment</button>
+      <button class='form-button' type="submit" onSubmit={handleSubmit}>Book Appointment</button>
     </form>
   );
 }

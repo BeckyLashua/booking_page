@@ -17,10 +17,10 @@ function ConfirmAppointment( ) {
       <h2>Appointment Confirmation</h2>
       <p>Congratulations! You booked your appointment!</p>
       <div>
-        <button onClick={handleBookClick}>
+        <button class='return-button' onClick={handleBookClick}>
           Book Another Appointment
         </button><br />
-        <button onClick={handleFindClick}>
+        <button class='return-button' onClick={handleFindClick}>
           Manage Appointments
         </button><br />
       </div>

@@ -40,23 +40,25 @@ function RescheduleForm(props) {
   };
   return (
     <form>
-      <label htmlFor="date">New Preferred Date</label>
+      <label class='form-label' htmlFor="date">New Preferred Date</label>
       <input
+        class='form-input'
         type="date"
         id="date"
         name="date"
         value={date}
         onChange={handleDateChange}
       /><br />
-      <label htmlFor="time">New Preferred Time</label>
+      <label class='form-label' htmlFor="time">New Preferred Time</label>
       <input
+        class='form-input'
         type="time"
         id="time"
         name="time"
         value={time}
         onChange={handleTimeChange}
       /><br />
-      <button type="submit" onSubmit={handleSubmit}>Reschedule Appointment</button>
+      <button class='form-button' type="submit" onSubmit={handleSubmit}>Reschedule Appointment</button>
     </form>
   );
 }

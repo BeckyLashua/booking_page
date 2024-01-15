@@ -16,12 +16,16 @@ function Home() {
 
   return (
     <div>
-      <button onClick={handleBookClick}>
-        Book an Appointment
-      </button><br />
-      <button onClick={handleSearchClick}>
-        Manage Your Appointments
-      </button>
+      <div class='div-wrapper'>
+        <button class='form-button' onClick={handleBookClick}>
+          Book an Appointment
+        </button><br />
+      </div>
+      <div class='div-wrapper'>
+        <button class='form-button' onClick={handleSearchClick}>
+          Manage Your Appointments
+        </button>
+      </div>
     </div>
   );
 }

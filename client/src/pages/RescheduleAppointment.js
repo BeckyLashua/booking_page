@@ -12,7 +12,7 @@ function RescheduleAppointment() {
   return (
     <div>
       <div>
-        <button onClick={handleGoBackClick}>
+        <button class='return-button'  onClick={handleGoBackClick}>
           Go Back
         </button><br />
       </div>

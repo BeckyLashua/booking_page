@@ -19,13 +19,13 @@ function BookingItemCard( {appt} ) {
     }
   }
   return (
-    <div>
+    <div class='div-wrapper'>
       <BookingItem appt={appt}/>
-      <button onClick={handleRescheduleClick}>
-          Reschedule
+      <button class='form-button' onClick={handleRescheduleClick}>
+          Reschedule Appointment
       </button><br />
-      <button onClick={handleCancelClick}>
-          Cancel
+      <button class='form-button' onClick={handleCancelClick}>
+          Cancel Appointment
         </button>
     </div>
   );
