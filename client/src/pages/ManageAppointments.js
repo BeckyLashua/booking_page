@@ -14,7 +14,7 @@ function ManageAppointments() {
     <div>
       <div>
         <button class='return-button'  onClick={handleGoBackClick}>
-          Go Back
+          Go Back To Home Page
         </button><br />
       </div>
       <div class='div-wrapper'>

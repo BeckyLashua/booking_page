@@ -7,7 +7,7 @@ function Appointments() {
   let navigate = useNavigate();
 
   function handleGoBackClick() {
-    navigate('/manage');
+    navigate('/');
   }
 
   let appts = [
@@ -20,7 +20,7 @@ function Appointments() {
     <div>
       <div>
         <button class='return-button' onClick={handleGoBackClick}>
-          Go Back
+          Go Back To Home Page
         </button><br />
       </div>
       <h2>Your Appointments</h2>

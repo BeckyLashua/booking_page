@@ -14,10 +14,10 @@ function BookAppointment() {
     <div>
       <div>
         <button class='return-button' onClick={handleGoBackClick}>
-          Go Back
+          Go Back To Home Page
         </button><br />
       </div>
-      <div class='div-wrapper'>
+      <div>
         <h2>Book an Appointment</h2>
         <BookingForm />
       </div>

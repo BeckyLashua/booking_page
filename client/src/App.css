@@ -39,7 +39,6 @@
 .div-wrapper {
   margin: 20px;
   padding: 10px;
-  background-color: #cacacb; 
 }
 
 button {
@@ -52,7 +51,8 @@ button {
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;background-color: #edeff2;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 .form-input:focus {
