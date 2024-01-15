@@ -9,6 +9,7 @@ function RescheduleAppointment() {
   function handleGoBackClick() {
     navigate('/appointments');
   }
+
   return (
     <div>
       <div>

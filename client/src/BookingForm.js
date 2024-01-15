@@ -76,7 +76,7 @@ function BookingForm(props) {
         onChange={handleChange}
       /><br />
       <TimeInput/><br />
-      <button class='form-button' type="submit" onSubmit={handleSubmit}>Book Appointment</button>
+      <button class='form-button' type="submit" onClick={handleSubmit}>Book Appointment</button>
     </form>
   );
 }

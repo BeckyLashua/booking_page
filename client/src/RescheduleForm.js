@@ -1,30 +1,16 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RescheduleForm.css';
 
 function RescheduleForm(props) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  
-  const handleFirstNameChange = function(event) {
-    setFirstName(event.target.value);
-  };
+  let navigate = useNavigate();
 
-  const handleLastNameChange = function(event) {
-    setLastName(event.target.value);
-  };
-
-  const handleEmailChange = function(event) {
-    setEmail(event.target.value);
-  };
-
-  const handlePhoneChange = function(event) {
-    setPhone(event.target.value);
-  };
+  function handleGoBackClick() {
+    navigate('/appointments');
+  }
 
   const handleDateChange = function(event) {
     setDate(event.target.value);
@@ -37,6 +23,7 @@ function RescheduleForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Add form submission logic here
+    navigate('/confirm');
   };
   return (
     <form>
@@ -58,7 +45,7 @@ function RescheduleForm(props) {
         value={time}
         onChange={handleTimeChange}
       /><br />
-      <button class='form-button' type="submit" onSubmit={handleSubmit}>Reschedule Appointment</button>
+      <button class='form-button' type="submit" onClick={handleSubmit}>Reschedule Appointment</button>
     </form>
   );
 }
