@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+//import FlagImage from './FlagImage';
+
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
@@ -8,16 +10,13 @@ const LanguageToggle = () => {
     i18n.changeLanguage(language);
   };
 
-  const britishFlagImage = require('./images/british_flag.png').default;
-  const mexicanFlagImage = require('./images/mexico_flag.png').default;
-
   return (
     <div>
-      <button onClick={() => changeLanguage('en')}>
-        <img src={britishFlagImage} alt="British Flag" id="britishFlag" />
+      <button onClick={() => changeLanguage('en')}>EN
+        {/*<FlagImage country='britain' language='en' />*/}
       </button>
-      <button onClick={() => changeLanguage('es')}>
-        <img src={mexicanFlagImage} alt="Mexican Flag" id="mexicanFlag" />
+      <button onClick={() => changeLanguage('es')}>ES
+        {/*<FlagImage country='mexico' language='es'/>*/}
       </button>
     </div>
   );
