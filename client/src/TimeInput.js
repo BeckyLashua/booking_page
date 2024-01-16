@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './TimeInput.css';
 
 function TimeInput({min, max, increment}) {
@@ -24,9 +25,11 @@ function TimeInput({min, max, increment}) {
 
   const timeOptions = generateTimeOptions();
 
+  const { t } = useTranslation();
+
   return (
     <div>
-      <label class='form-label' htmlFor="time">Appointment Time</label><br />
+      <label class='form-label' htmlFor="time">{t('inputTime')}</label><br />
         <select class='form-input' value={selectedTime} onChange={handleChange}>
           {timeOptions.map(time => (
             <option key={time} value={time}>{time}</option>

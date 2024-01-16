@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './RescheduleForm.css';
 
 function RescheduleForm(props) {
@@ -25,9 +26,11 @@ function RescheduleForm(props) {
     // Add form submission logic here
     navigate('/confirm');
   };
+
+  const { t } = useTranslation();
   return (
     <form>
-      <label class='form-label' htmlFor="date">New Preferred Date</label>
+      <label class='form-label' htmlFor="date">{t('rescheduleInputDate')}</label>
       <input
         class='form-input'
         type="date"
@@ -36,7 +39,7 @@ function RescheduleForm(props) {
         value={date}
         onChange={handleDateChange}
       /><br />
-      <label class='form-label' htmlFor="time">New Preferred Time</label>
+      <label class='form-label' htmlFor="time">{t('rescheduleInputTime')}</label>
       <input
         class='form-input'
         type="time"
@@ -45,7 +48,7 @@ function RescheduleForm(props) {
         value={time}
         onChange={handleTimeChange}
       /><br />
-      <button class='form-button' type="submit" onClick={handleSubmit}>Reschedule Appointment</button>
+      <button class='form-button' type="submit" onClick={handleSubmit}>{t('rescheduleButton')}</button>
     </form>
   );
 }

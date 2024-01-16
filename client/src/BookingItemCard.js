@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import BookingItem from './BookingItem';
 import './BookingItemCard.css';
 
 function BookingItemCard( {appt} ) {
+  const { t } = useTranslation();
+
   let navigate = useNavigate();
 
   function handleRescheduleClick() {
@@ -22,10 +26,10 @@ function BookingItemCard( {appt} ) {
     <div class='div-wrapper'>
       <BookingItem appt={appt}/>
       <button class='form-button' onClick={handleRescheduleClick}>
-          Reschedule Appointment
+        {t('rescheduleButton')}
       </button><br />
       <button class='form-button' onClick={handleCancelClick}>
-          Cancel Appointment
+        {t('cancelApptButton')}
         </button>
     </div>
   );

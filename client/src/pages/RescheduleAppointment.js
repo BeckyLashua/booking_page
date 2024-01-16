@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RescheduleForm from '../RescheduleForm';
+import { useTranslation } from 'react-i18next';
+
 import './RescheduleAppointment.css';
 
 function RescheduleAppointment() {
@@ -10,14 +12,16 @@ function RescheduleAppointment() {
     navigate('/appointments');
   }
 
+  const { t } = useTranslation();
+  
   return (
     <div>
       <div>
         <button class='return-button'  onClick={handleGoBackClick}>
-          Go Back To Appointments
+        {t('appointmentsTitle')}
         </button><br />
       </div>
-      <h2>Reschedule Appointment</h2>
+      <h2>{t('rescheduleTitle')}</h2>
       <RescheduleForm />
     </div>
   );

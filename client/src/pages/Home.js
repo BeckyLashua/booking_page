@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import './Home.css';
 
 
@@ -13,17 +15,18 @@ function Home() {
   function handleSearchClick() {
     navigate('/manage');
   }
+  const { t } = useTranslation();
 
   return (
     <div>
       <div class='div-wrapper'>
         <button class='form-button' onClick={handleBookClick}>
-          Book an Appointment
+          {t('headerBooking')}
         </button><br />
       </div>
       <div class='div-wrapper'>
         <button class='form-button' onClick={handleSearchClick}>
-          Manage Your Appointments
+        {t('manageApptButton')}
         </button>
       </div>
     </div>

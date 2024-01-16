@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import BookingForm from '../BookingForm';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import './BookAppointment.css';
 
 function BookAppointment() {
@@ -10,15 +12,17 @@ function BookAppointment() {
     navigate('/');
   }
 
+  const { t } = useTranslation();
+
   return (
     <div>
       <div>
         <button class='return-button' onClick={handleGoBackClick}>
-          Go Back To Home Page
+          {t('homeReturnButton')}
         </button><br />
       </div>
       <div>
-        <h2>Book an Appointment</h2>
+        <h2>{t('headerBooking')}</h2>
         <BookingForm />
       </div>
     </div>

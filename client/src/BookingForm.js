@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import TimeInput from './TimeInput';
 import './BookingForm.css';
 
@@ -28,9 +30,11 @@ function BookingForm(props) {
     navigate('/confirm');
   };
 
+  const { t } = useTranslation();
+
   return (
     <form class='div-wrapper'>
-      <label class='form-label' htmlFor="first_name">First Name</label><br />
+      <label class='form-label' htmlFor="first_name">{t('inputFirstName')}</label><br />
       <input
         class='form-input'
         type="text"
@@ -39,7 +43,7 @@ function BookingForm(props) {
         value={formData.firstName}
         onChange={handleChange}
       /><br />
-      <label class='form-label' htmlFor="last_name">Last Name</label><br />
+      <label class='form-label' htmlFor="last_name">{t('inputLastName')}</label><br />
       <input 
         class='form-input'
         type="text"
@@ -48,7 +52,7 @@ function BookingForm(props) {
         value={formData.lastName}
         onChange={handleChange}
       /><br />
-      <label class='form-label' htmlFor="email">Email</label><br /> 
+      <label class='form-label' htmlFor="email">{t('inputEmail')}</label><br /> 
       <input
         class='form-input'
         type="email"
@@ -57,7 +61,7 @@ function BookingForm(props) {
         value={formData.email}
         onChange={handleChange}
       /><br />
-      <label class='form-label' htmlFor="phone">Phone</label><br /> 
+      <label class='form-label' htmlFor="phone">{t('inputPhone')}</label><br /> 
       <input
         class='form-input'
         type="tel"
@@ -66,7 +70,7 @@ function BookingForm(props) {
         value={formData.phone}
         onChange={handleChange}
       /><br />
-      <label class='form-label' htmlFor="date">Appointment Date</label><br />
+      <label class='form-label' htmlFor="date">{t('inputDate')}</label><br />
       <input
         class='form-input'
         type="date"
@@ -76,7 +80,7 @@ function BookingForm(props) {
         onChange={handleChange}
       /><br />
       <TimeInput/><br />
-      <button class='form-button' type="submit" onClick={handleSubmit}>Book Appointment</button>
+      <button class='form-button' type="submit" onClick={handleSubmit}>{t('bookingButton')}</button>
     </form>
   );
 }

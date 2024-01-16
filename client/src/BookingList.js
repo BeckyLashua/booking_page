@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import './BookingList.css';
 import BookingItemCard from './BookingItemCard';
 
 function BookingList( { appts } ) {
+  const { t } = useTranslation();
   return (
     <div>
       <ul>

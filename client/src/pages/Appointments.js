@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import BookingList from '../BookingList';
 import './Appointments.css';
 
@@ -16,14 +18,16 @@ function Appointments() {
     {id: 3, date: '10/02/24', time: '1:00pm'}
   ];
 
+  const { t } = useTranslation();
+
   return (
     <div>
       <div>
         <button class='return-button' onClick={handleGoBackClick}>
-          Go Back To Home Page
+        {t('homeReturnButton')}
         </button><br />
       </div>
-      <h2>Your Appointments</h2>
+      <h2>{t('appointmentsTitle')}</h2>
       <BookingList appts = {appts}/>
     </div>
   );

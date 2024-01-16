@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import './ConfirmAppointment.css';
 
 function ConfirmAppointment( ) {
-  const [message, setMessage] = useState('');
-  const [isError, setIsError] = useState(false);
-  
   let navigate = useNavigate();
 
   function handleBookClick() {
@@ -15,16 +14,18 @@ function ConfirmAppointment( ) {
     navigate('/manage');
   }
 
+  const { t } = useTranslation();
+  
   return (
     <div>
-      <h2>Appointment Confirmation</h2>
-      <p>Congratulations! You booked your appointment!</p>
+      <h2>{t('confirmationTitle')}</h2>
+      <p>{t('bookingSuccess')}</p>
       <div>
         <button class='return-button' onClick={handleBookClick}>
-          Book Another Appointment
+        {t('anotherBookingButton')}
         </button>
         <button class='return-button' onClick={handleFindClick}>
-          Manage Your Appointments
+        {t('manageApptButton')}
         </button><br />
       </div>
     </div>
