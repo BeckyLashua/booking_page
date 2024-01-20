@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import BookingItem from './BookingItem';
-import '../styles/App.css';
+import '../App.css';
 function BookingItemCard( {appt} ) {
   const { t } = useTranslation();
 

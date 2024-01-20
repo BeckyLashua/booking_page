@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import '../styles//SearchForm.css';
+import '../styles/SearchForm.css';
 
 function SearchForm(props) {
   const { t } = useTranslation();

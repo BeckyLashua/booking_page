@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import '../styles/App.css';
+import '../App.css';
+
 function TimeInput({min, max, increment}) {
   const [selectedTime, setSelectedTime] = useState('');
 

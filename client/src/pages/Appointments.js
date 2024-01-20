@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import BookingList from '../components/BookingList';
-import '../styles/App.css';
+import '../App.css';
 
 
 function Appointments() {

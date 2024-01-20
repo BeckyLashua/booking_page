@@ -3,7 +3,7 @@ import SearchForm from '../components/SearchForm';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import '../styles/App.css';
+import '../App.css';
 function ManageAppointments() {
   let navigate = useNavigate();
 

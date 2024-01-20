@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import RescheduleForm from '../components/RescheduleForm';
 import { useTranslation } from 'react-i18next';
 
-import '../styles/App.css';
+import '../App.css';
 function RescheduleAppointment() {
   let navigate = useNavigate();
 

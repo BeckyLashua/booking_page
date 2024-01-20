@@ -8,10 +8,12 @@ import Appointments from './pages/Appointments';
 import ManageAppointments from './pages/ManageAppointments';
 import LanguageToggle from './components/LanguageToggle';
 import { useTranslation } from 'react-i18next';
-import './styles/App.css';
+
+import './App.css';
 
 function App() {
   const { t } = useTranslation();
+
   return (
     <div className="App">
       <header className="App-header">
