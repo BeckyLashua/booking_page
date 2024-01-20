@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import SearchForm from '../SearchForm';
+import SearchForm from '../components/SearchForm';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import './ManageAppointments.css';
-
+import '../styles/App.css';
 function ManageAppointments() {
   let navigate = useNavigate();
 

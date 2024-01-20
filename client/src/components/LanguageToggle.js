@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 //import FlagImage from './FlagImage';
-
-
+import '../styles/App.css';
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
 

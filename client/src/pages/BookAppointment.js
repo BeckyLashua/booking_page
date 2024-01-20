@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import BookingForm from '../BookingForm';
+import BookingForm from '../components/BookingForm';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import './BookAppointment.css';
+import '../styles/App.css';
 
 function BookAppointment() {
   let navigate = useNavigate();

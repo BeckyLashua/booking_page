@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import './BookingList.css';
-import BookingItemCard from './BookingItemCard';
+import '../styles/App.css';import BookingItemCard from './BookingItemCard';
 
 function BookingList( { appts } ) {
   const { t } = useTranslation();

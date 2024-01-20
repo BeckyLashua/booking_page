@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import RescheduleForm from '../RescheduleForm';
+import RescheduleForm from '../components/RescheduleForm';
 import { useTranslation } from 'react-i18next';
 
-import './RescheduleAppointment.css';
-
+import '../styles/App.css';
 function RescheduleAppointment() {
   let navigate = useNavigate();
 

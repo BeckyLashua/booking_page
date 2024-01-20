@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import TimeInput from './TimeInput';
-import './BookingForm.css';
-
+import '../styles/App.css';
 function BookingForm(props) {
   let navigate = useNavigate();
 

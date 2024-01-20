@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import BookingList from '../BookingList';
-import './Appointments.css';
+import BookingList from '../components/BookingList';
+import '../styles/App.css';
+
 
 function Appointments() {
   let navigate = useNavigate();

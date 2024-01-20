@@ -1,5 +1,4 @@
 //import logo from './logo.svg';
-import React, { useTransition } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import BookAppointment from './pages/BookAppointment';
@@ -7,10 +6,9 @@ import RescheduleAppointment from './pages/RescheduleAppointment';
 import ConfirmAppointment from './pages/ConfirmAppointment';
 import Appointments from './pages/Appointments';
 import ManageAppointments from './pages/ManageAppointments';
-import './App.css';
-import LanguageToggle from './LanguageToggle';
+import LanguageToggle from './components/LanguageToggle';
 import { useTranslation } from 'react-i18next';
-//import i18n from './i18n';
+import './styles/App.css';
 
 function App() {
   const { t } = useTranslation();
