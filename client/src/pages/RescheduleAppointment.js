@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import RescheduleForm from '../components/RescheduleForm';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import RescheduleForm from '../components/RescheduleForm';
 import '../App.css';
+
 function RescheduleAppointment() {
-  let navigate = useNavigate();
-
-  function handleGoBackClick() {
-    navigate('/appointments');
-  }
-
   const { t } = useTranslation();
   
   return (
     <div>
       <div>
-        <button class='return-button'  onClick={handleGoBackClick}>
-        {t('appointmentsTitle')}
-        </button><br />
+        <Link to='/appointments'>
+          <button class='return-button'>
+          {t('appointmentsTitle')}
+          </button>
+        </Link><br />
       </div>
       <h2>{t('rescheduleTitle')}</h2>
       <RescheduleForm />

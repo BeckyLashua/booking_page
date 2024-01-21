@@ -1,18 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
 import BookingList from '../components/BookingList';
 import '../App.css';
 
 
 function Appointments() {
-  let navigate = useNavigate();
-
-  function handleGoBackClick() {
-    navigate('/');
-  }
-
   let appts = [
     {id: 1, date: '7/03/24', time: '10:30am'},
     {id: 2, date: '9/30/24', time: '4:00pm'},
@@ -24,9 +16,11 @@ function Appointments() {
   return (
     <div>
       <div>
-        <button class='return-button' onClick={handleGoBackClick}>
-        {t('homeReturnButton')}
-        </button><br />
+        <Link to='/'>
+          <button class='return-button'>
+          {t('homeReturnButton')}
+          </button>
+        </Link><br />
       </div>
       <h2>{t('appointmentsTitle')}</h2>
       <BookingList appts = {appts}/>

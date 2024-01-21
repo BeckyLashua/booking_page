@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
 import '../App.css';
 
 function ConfirmAppointment( ) {
-  let navigate = useNavigate();
-
-  function handleBookClick() {
-    navigate('/book');
-  }
-  function handleFindClick() {
-    navigate('/manage');
-  }
-
   const { t } = useTranslation();
   
   return (
@@ -21,12 +10,16 @@ function ConfirmAppointment( ) {
       <h2>{t('confirmationTitle')}</h2>
       <p>{t('bookingSuccess')}</p>
       <div>
-        <button class='return-button' onClick={handleBookClick}>
-        {t('anotherBookingButton')}
-        </button>
-        <button class='return-button' onClick={handleFindClick}>
-        {t('manageApptButton')}
-        </button><br />
+        <Link to='/book'>
+          <button class='return-button'>
+          {t('anotherBookingButton')}
+          </button>
+        </Link>
+        <Link to='/manage'>
+          <button class='return-button'>
+          {t('manageApptButton')}
+          </button>
+        </Link><br />
       </div>
     </div>
   );

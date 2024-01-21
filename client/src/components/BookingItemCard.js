@@ -1,35 +1,32 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
 import BookingItem from './BookingItem';
 import '../App.css';
+
 function BookingItemCard( {appt} ) {
   const { t } = useTranslation();
-
   let navigate = useNavigate();
 
-  function handleRescheduleClick() {
-    navigate('/reschedule');
-  }
   function handleCancelClick() {
     const userConfirmed = window.confirm("Are you sure you want to cancel your appointment?");
     
     if (userConfirmed) {
       // User clicked 'OK'
-      console.log('Appt canceled');
+      // remove bookingitem from bookinglist
       // Place your logic here for when the user confirms
     }
   }
   return (
     <div class='div-wrapper'>
       <BookingItem appt={appt}/>
-      <button class='form-button' onClick={handleRescheduleClick}>
-        {t('rescheduleButton')}
-      </button><br />
+      <Link to='/reschedule'>
+        <button class='form-button'>
+          {t('rescheduleButton')}
+        </button>
+      </Link><br />
       <button class='form-button' onClick={handleCancelClick}>
         {t('cancelApptButton')}
-        </button>
+      </button>
     </div>
   );
 }

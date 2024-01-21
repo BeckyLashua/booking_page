@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-import SearchForm from '../components/SearchForm';
-import { useNavigate } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import SearchForm from '../components/SearchForm';
 import '../App.css';
+
 function ManageAppointments() {
-  let navigate = useNavigate();
-
-  function handleGoBackClick() {
-    navigate('/');
-  }
-
   const { t } = useTranslation();
   
   return (
     <div>
       <div>
-        <button class='return-button'  onClick={handleGoBackClick}>
-        {t('homeReturnButton')}
-        </button><br />
+        <Link to='/'>
+          <button class='return-button'>
+            {t('homeReturnButton')}
+          </button>
+        </Link><br />
       </div>
       <div class='div-wrapper'>
         <h2>{t('manageApptButton')}</h2>
