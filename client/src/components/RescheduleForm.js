@@ -40,11 +40,11 @@ function RescheduleForm(props) {
         min = {8}
         max = {18}
         increment = {30}
-        name = {'reschedule-time'}
+        name = 'reschedule-time'
         title = {t('rescheduleInputTime')}
-        labelClass= {'form-label'}
-        timeClass = {'form-input'}
-        htmlFor= {"time"}
+        labelClass= 'form-label'
+        timeClass = 'form-input'
+        htmlFor= "time"
       /><br />
       <button class='form-button' type="submit" onClick={handleSubmit}>{t('rescheduleButton')}</button>
     </form>

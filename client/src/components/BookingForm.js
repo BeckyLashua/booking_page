@@ -83,10 +83,10 @@ function BookingForm(props) {
         min = {8}
         max = {18}
         increment = {30}
-        name = {'booking-time'}
+        name = 'booking-time'
         title = {t('inputTime')}
-        labelClass= {'form-label'}
-        inputClass= {'form-input'}
+        labelClass= 'form-label'
+        inputClass= 'form-input'
         htmlFor= {"time"}
       /><br />
       <button class='form-button' type="submit" onClick={handleSubmit}>{t('bookingButton')}</button>
