@@ -15,7 +15,8 @@ function BookingForm(props) {
     lastName: '',
     email: '',
     phone: '',
-    date: ''
+    date: '',
+    time: ''
   });
 
   const handleChange = function(event) {
@@ -79,13 +80,14 @@ function BookingForm(props) {
         onChange={handleChange}
       /><br />
       <TimeInput
-        min = '8'
-        max = '18'
-        increment = '30'
+        min = {8}
+        max = {18}
+        increment = {30}
+        name = {'booking-time'}
         title = {t('inputTime')}
-        labelClass='form-label'
-        inputClass='form-input'
-        htmlFor="time"
+        labelClass= {'form-label'}
+        inputClass= {'form-input'}
+        htmlFor= {"time"}
       /><br />
       <button class='form-button' type="submit" onClick={handleSubmit}>{t('bookingButton')}</button>
     </form>
