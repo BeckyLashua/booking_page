@@ -2,23 +2,20 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import TimeInput from './TimeInput';
 import '../App.css';
 
 function RescheduleForm(props) {
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [formData, setFormData] = useState({
+    date: '',
+    time: ''
+  });
+
   let navigate = useNavigate();
 
-  function handleGoBackClick() {
-    navigate('/appointments');
-  }
-
-  const handleDateChange = function(event) {
-    setDate(event.target.value);
-  };
-
-  const handleTimeChange = function(event) {
-    setTime(event.target.value);
+  const handleChange = function(event) {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
   
   const handleSubmit = (event) => {
@@ -36,17 +33,16 @@ function RescheduleForm(props) {
         type="date"
         id="date"
         name="date"
-        value={date}
-        onChange={handleDateChange}
+        value={formData.date}
+        onChange={handleChange}
       /><br />
-      <label class='form-label' htmlFor="time">{t('rescheduleInputTime')}</label>
-      <input
-        class='form-input'
-        type="time"
-        id="time"
-        name="time"
-        value={time}
-        onChange={handleTimeChange}
+      <TimeInput 
+        min = '8'
+        max = '18'
+        increment = '30'
+        title = {t('rescheduleInputTime')}
+        timeClass='form-label' 
+        htmlFor="time"
       /><br />
       <button class='form-button' type="submit" onClick={handleSubmit}>{t('rescheduleButton')}</button>
     </form>

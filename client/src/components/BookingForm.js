@@ -5,9 +5,11 @@ import { useTranslation } from 'react-i18next';
 import TimeInput from './TimeInput';
 import '../App.css';
 
-function BookingForm(props) {
-  let navigate = useNavigate();
 
+function BookingForm(props) {
+  const { t } = useTranslation();
+  let navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,7 +17,7 @@ function BookingForm(props) {
     phone: '',
     date: ''
   });
-  
+
   const handleChange = function(event) {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -28,8 +30,6 @@ function BookingForm(props) {
     console.log(formData);
     navigate('/confirm');
   };
-
-  const { t } = useTranslation();
 
   return (
     <form class='div-wrapper'>
@@ -78,7 +78,15 @@ function BookingForm(props) {
         value={formData.date}
         onChange={handleChange}
       /><br />
-      <TimeInput/><br />
+      <TimeInput
+        min = '8'
+        max = '18'
+        increment = '30'
+        title = {t('inputTime')}
+        labelClass='form-label'
+        inputClass='form-input'
+        htmlFor="time"
+      /><br />
       <button class='form-button' type="submit" onClick={handleSubmit}>{t('bookingButton')}</button>
     </form>
   );

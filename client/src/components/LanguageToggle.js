@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import '../App.css';
 
 
+
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
 
@@ -12,10 +13,8 @@ const LanguageToggle = () => {
   return (
     <div>
       <button onClick={() => changeLanguage('en')}>EN
-        {/*<FlagImage country='britain' language='en' />*/}
       </button>
       <button onClick={() => changeLanguage('es')}>ES
-        {/*<FlagImage country='mexico' language='es'/>*/}
       </button>
     </div>
   );
