@@ -16,7 +16,7 @@
   "bookingSuccess": "¡Felicidades! Ha reservado esta cita con éxito.",
   "bookingError": "Lo sentimos. Hubo un error al reservar esta cita. Intente de nuevo.",
   "searchButton": "Buscar",
-  "appointmentsTitle": "Citas",
+  "appointmentsReturn": "Regresar a las Citas",
   "apptCardTitle": "CITAS",
   "apptCardDate": "Fecha:",
   "apptCardTime": "Hora:",

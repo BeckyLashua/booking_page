@@ -7,19 +7,17 @@ function Home() {
 
   return (
     <div>
-      <div class='div-wrapper'>
+      <div>
         <Link to='/book'>
-          <button class='form-button'>
-            {t('headerBooking')}
-          </button>
-        </Link><br />
-      </div>
-      <div class='div-wrapper'>
-        <Link to='/manage'>
-          <button class='form-button'>
-          {t('manageApptButton')}
+          <button class='return-button'>
+          {t('headerBooking')}
           </button>
         </Link>
+        <Link to='/manage'>
+          <button class='return-button'>
+          {t('manageApptButton')}
+          </button>
+        </Link><br />
       </div>
     </div>
   );

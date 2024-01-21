@@ -16,9 +16,14 @@ function Appointments() {
   return (
     <div>
       <div>
-        <Link to='/'>
+        <Link to='/book'>
           <button class='return-button'>
-          {t('homeReturnButton')}
+          {t('headerBooking')}
+          </button>
+        </Link>
+        <Link to='/manage'>
+          <button class='return-button'>
+          {t('manageApptButton')}
           </button>
         </Link><br />
       </div>

@@ -16,7 +16,7 @@
   "bookingSuccess": "Congratulations! You have sucessfully booked this appointment!",
   "bookingError": "Sorry. There was an error in booking this appointment. Try Again.",
   "searchButton": "Search",
-  "appointmentsTitle": "Appointments",
+  "appointmentsReturn": "Go Back to Appointments",
   "apptCardTitle": "APPOINTMENT",
   "apptCardDate": "Date:",
   "apptCardTime": "Time:",
