@@ -10,7 +10,7 @@ function RescheduleAppointment() {
     <div>
       <div>
         <Link to='/appointments'>
-          <button class='return-button'>
+          <button className='return-button'>
           {t('appointmentsReturn')}
           </button>
         </Link><br />

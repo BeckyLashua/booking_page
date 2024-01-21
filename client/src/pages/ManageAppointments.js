@@ -10,12 +10,12 @@ function ManageAppointments() {
     <div>
       <div>
         <Link to='/'>
-          <button class='return-button'>
+          <button className='return-button'>
             {t('homeReturnButton')}
           </button>
         </Link><br />
       </div>
-      <div class='div-wrapper'>
+      <div className='div-wrapper'>
         <h2>{t('manageApptButton')}</h2>
         <SearchForm />
       </div>

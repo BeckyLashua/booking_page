@@ -17,14 +17,14 @@ function BookingItemCard( {appt} ) {
     }
   }
   return (
-    <div class='div-wrapper'>
+    <div className='div-wrapper'>
       <BookingItem appt={appt}/>
       <Link to='/reschedule'>
-        <button class='form-button'>
+        <button className='form-button'>
           {t('rescheduleButton')}
         </button>
       </Link><br />
-      <button class='form-button' onClick={handleCancelClick}>
+      <button className='form-button' onClick={handleCancelClick}>
         {t('cancelApptButton')}
       </button>
     </div>

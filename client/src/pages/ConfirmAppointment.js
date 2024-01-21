@@ -11,12 +11,12 @@ function ConfirmAppointment( ) {
       <p>{t('bookingSuccess')}</p>
       <div>
         <Link to='/book'>
-          <button class='return-button'>
+          <button className='return-button'>
           {t('anotherBookingButton')}
           </button>
         </Link>
         <Link to='/manage'>
-          <button class='return-button'>
+          <button className='return-button'>
           {t('manageApptButton')}
           </button>
         </Link><br />

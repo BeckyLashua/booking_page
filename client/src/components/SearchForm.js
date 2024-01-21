@@ -21,16 +21,16 @@ function SearchForm(props) {
   };
   return (
     <form>
-      <label class='form-label' htmlFor="email">{t('inputEmail')}</label>
+      <label className='form-label' htmlFor="email">{t('inputEmail')}</label>
       <input
-        class='form-input'
+        className='form-input'
         type="email"
         id="email"
         name="email"
         value={email}
         onChange={handleEmailChange}
       /><br />
-      <button class='form-button' onClick={handleSubmit}>{t('searchButton')}</button>
+      <button className='form-button' onClick={handleSubmit}>{t('searchButton')}</button>
     </form>
   );
 }

@@ -10,7 +10,7 @@ function BookAppointment() {
     <div>
       <div>
         <Link to='/'>
-          <button class='return-button'>
+          <button className='return-button'>
             {t('homeReturnButton')}
           </button>
         </Link><br />

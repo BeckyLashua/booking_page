@@ -15,11 +15,15 @@ const generateTimeOptions = (min, max, increment ) => {
 };
 
 function TimeInput(props) {
-  const [selectedTime, setSelectedTime] = useState('');
-
   // Handle change in dropdown
   const handleChange = (event) => {
-    setSelectedTime(event.target.value);
+    const timeEvent = {
+      target: {
+        name: 'time',
+        value: event.target.value,
+      }
+    }
+    props.onChange(timeEvent);
   };
 
   const timeOptions = generateTimeOptions( 
@@ -30,12 +34,11 @@ function TimeInput(props) {
 
   return (
     <div>
-      <label class= { props.labelClass } htmlFor={ props.htmlFor }>{ props.title }</label><br />
+      <label className= { props.labelClass } htmlFor={ props.htmlFor }>{ props.title }</label><br />
         <select 
-          class={ props.timeClass } 
-          name = { props.name }
-          value={selectedTime} 
-          onChange={handleChange}>
+          type='time'
+          className={ props.inputClass } 
+          onChange={ handleChange }>
           {timeOptions.map(time => (
             <option key={time} value={time}>{time}</option>
           ))}

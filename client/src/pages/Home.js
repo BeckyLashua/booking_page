@@ -9,12 +9,12 @@ function Home() {
     <div>
       <div>
         <Link to='/book'>
-          <button class='return-button'>
+          <button className='return-button'>
           {t('headerBooking')}
           </button>
         </Link>
         <Link to='/manage'>
-          <button class='return-button'>
+          <button className='return-button'>
           {t('manageApptButton')}
           </button>
         </Link><br />

@@ -21,15 +21,16 @@ function RescheduleForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Add form submission logic here
+    console.log(formData);
     navigate('/confirm');
   };
 
   const { t } = useTranslation();
   return (
     <form>
-      <label class='form-label' htmlFor="date">{t('rescheduleInputDate')}</label>
+      <label className='form-label' htmlFor="date">{t('rescheduleInputDate')}</label>
       <input
-        class='form-input'
+        className='form-input'
         type="date"
         id="date"
         name="date"
@@ -40,13 +41,13 @@ function RescheduleForm(props) {
         min = {8}
         max = {18}
         increment = {30}
-        name = 'reschedule-time'
         title = {t('rescheduleInputTime')}
         labelClass= 'form-label'
         timeClass = 'form-input'
         htmlFor= "time"
+        onChange={handleChange}
       /><br />
-      <button class='form-button' type="submit" onClick={handleSubmit}>{t('rescheduleButton')}</button>
+      <button className='form-button' type="submit" onClick={handleSubmit}>{t('rescheduleButton')}</button>
     </form>
   );
 }
