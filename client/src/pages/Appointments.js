@@ -27,7 +27,7 @@ function Appointments() {
           </button>
         </Link><br />
       </div>
-      <h2>{t('appointmentsTitle')}</h2>
+      <h2>{t('appointmentsHeader')}</h2>
       <BookingList appts = {appts}/>
     </div>
   );

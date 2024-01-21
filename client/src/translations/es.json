@@ -17,6 +17,7 @@
   "bookingError": "Lo sentimos. Hubo un error al reservar esta cita. Intente de nuevo.",
   "searchButton": "Buscar",
   "appointmentsReturn": "Regresar a las Citas",
+  "appointmentsHeader": "Citas",
   "apptCardTitle": "CITAS",
   "apptCardDate": "Fecha:",
   "apptCardTime": "Hora:",
