@@ -1,8 +1,3 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-//import BookingForm from '../BookingForm';
-import Form from '../Form';
-
 const inputFields = [
   { 
     inputClass: 'firstname-input',
@@ -67,27 +62,6 @@ const inputFields = [
  
 ];
 
-const handleSubmit = (data) => {
-  console.log('Form Data:', data);
+module.exports = {
+  inputFields,
 };
-
-test('renders the booking form component', () => {
-  render(<Form inputs={inputFields} onSubmit={handleSubmit} buttonLabel={'Book'}/>);
-  // Add assertions here if needed
-});
-
-test('renders all form fields', () => {
-  render(<Form inputs={inputFields} onSubmit={handleSubmit} buttonLabel={'Book'}/>);
-  
-  // Test the input fields with labels 
-  expect(screen.getByLabelText(/First Name/i)).toBeInTheDocument();
-  expect(screen.getByLabelText(/Last Name/i)).toBeInTheDocument();
-  expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
-  expect(screen.getByLabelText(/Phone/i)).toBeInTheDocument();
-  expect(screen.getByLabelText(/Date/i)).toBeInTheDocument();
-  expect(screen.getByLabelText(/Time/i)).toBeInTheDocument();
-
-  // Test the submit button 
-  expect(screen.getByRole('button', { name: /book/i })).toBeInTheDocument();
-
-});
