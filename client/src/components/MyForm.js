@@ -34,7 +34,7 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!validateForm()) return;
-    console.log(formData);
+    onSubmit(formData);
   };  
 
   return (
