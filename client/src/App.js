@@ -6,22 +6,20 @@ import RescheduleAppointment from './pages/RescheduleAppointment';
 import ConfirmAppointment from './pages/ConfirmAppointment';
 import Appointments from './pages/Appointments';
 import ManageAppointments from './pages/ManageAppointments';
-import LanguageToggle from './components/LanguageToggle';
-import { useTranslation } from 'react-i18next';
+//import LanguageToggle from './components/LanguageToggle';
+//import { useTranslation } from 'react-i18next';
+import t from './translations/en.json';
 
 import './App.css';
 
 function App() {
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>{t('title')}</h1>
+        <h1>{t.title}</h1>
       </header>
-      <div>
-        <LanguageToggle />
-      </div>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />

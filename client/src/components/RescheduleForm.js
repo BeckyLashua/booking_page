@@ -1,8 +1,10 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
 import TimeInput from './TimeInput';
+import t from '../translations/en.json';
+
 import '../App.css';
 
 function RescheduleForm(props) {
@@ -25,10 +27,10 @@ function RescheduleForm(props) {
     navigate('/confirm');
   };
 
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
   return (
     <form>
-      <label className='form-label' htmlFor="date">{t('rescheduleInputDate')}</label>
+      <label className='form-label' htmlFor="date">{t.rescheduleInputDate}</label>
       <input
         className='form-input'
         type="date"
@@ -41,13 +43,13 @@ function RescheduleForm(props) {
         min = {8}
         max = {18}
         increment = {30}
-        title = {t('rescheduleInputTime')}
+        title = {t.rescheduleInputTime}
         labelClass= 'form-label'
         timeClass = 'form-input'
         htmlFor= "time"
         onChange={handleChange}
       /><br />
-      <button className='form-button' type="submit" onClick={handleSubmit}>{t('rescheduleButton')}</button>
+      <button className='form-button' type="submit" onClick={handleSubmit}>{t.rescheduleButton}</button>
     </form>
   );
 }

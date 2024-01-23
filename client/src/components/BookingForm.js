@@ -1,13 +1,15 @@
 
 import { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
 import TimeInput from './TimeInput';
+import t from '../translations/en.json';
+
 import '../App.css';
 
 
 function BookingForm(props) {
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
   let navigate = useNavigate();
   
   const [formData, setFormData] = useState({
@@ -33,7 +35,7 @@ function BookingForm(props) {
 
   return (
     <form className='div-wrapper'>
-      <label className='form-label' htmlFor="first_name">{t('inputFirstName')}</label><br />
+      <label className='form-label' htmlFor="first_name">{t.inputFirstName}</label><br />
       <input
         className='form-input'
         type="text"
@@ -42,7 +44,7 @@ function BookingForm(props) {
         value={formData.firstName}
         onChange={handleChange}
       /><br />
-      <label className='form-label' htmlFor="last_name">{t('inputLastName')}</label><br />
+      <label className='form-label' htmlFor="last_name">{t.inputLastName}</label><br />
       <input 
         className='form-input'
         type="text"
@@ -51,7 +53,7 @@ function BookingForm(props) {
         value={formData.lastName}
         onChange={handleChange}
       /><br />
-      <label className='form-label' htmlFor="email">{t('inputEmail')}</label><br /> 
+      <label className='form-label' htmlFor="email">{t.inputEmail}</label><br /> 
       <input
         className='form-input'
         type="email"
@@ -60,7 +62,7 @@ function BookingForm(props) {
         value={formData.email}
         onChange={handleChange}
       /><br />
-      <label className='form-label' htmlFor="phone">{t('inputPhone')}</label><br /> 
+      <label className='form-label' htmlFor="phone">{t.inputPhone}</label><br /> 
       <input
         className='form-input'
         type="tel"
@@ -69,7 +71,7 @@ function BookingForm(props) {
         value={formData.phone}
         onChange={handleChange}
       /><br />
-      <label className='form-label' htmlFor="date">{t('inputDate')}</label><br />
+      <label className='form-label' htmlFor="date">{t.inputDate}</label><br />
       <input
         className='form-input'
         type="date"
@@ -89,7 +91,7 @@ function BookingForm(props) {
         onChange={handleChange}
         value={formData.time}
       /><br />
-      <button className='form-button' type="submit" onClick={handleSubmit}>{t('bookingButton')}</button>
+      <button className='form-button' type="submit" onClick={handleSubmit}>{t.bookingButton}</button>
     </form>
   );
 }

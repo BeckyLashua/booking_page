@@ -1,11 +1,13 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
 import '../styles/SearchForm.css';
+import t from '../translations/en.json';
+
 
 function SearchForm(props) {
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
   let navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -21,7 +23,7 @@ function SearchForm(props) {
   };
   return (
     <form>
-      <label className='form-label' htmlFor="email">{t('inputEmail')}</label>
+      <label className='form-label' htmlFor="email">{t.inputEmail}</label>
       <input
         className='form-input'
         type="email"
@@ -30,7 +32,7 @@ function SearchForm(props) {
         value={email}
         onChange={handleEmailChange}
       /><br />
-      <button className='form-button' onClick={handleSubmit}>{t('searchButton')}</button>
+      <button className='form-button' onClick={handleSubmit}>{t.searchButton}</button>
     </form>
   );
 }
