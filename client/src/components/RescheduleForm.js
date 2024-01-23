@@ -1,5 +1,4 @@
 
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
 //import TimeInput from './TimeInput';
@@ -10,19 +9,23 @@ import '../App.css';
 
 function RescheduleForm() {
   let navigate = useNavigate();
-  const [formData, setFormData] = useState({});
   
-  const handleRescheduleSubmit = (submittedData) => {
-    // Add form submission logic here
-    // Go to Confirmation Page for Now
-    setFormData(submittedData);
-    console.log(submittedData);
+  const handleRescheduleSubmit = async (submittedData) => {
+    //setFormData(submittedData);
+    await fetch('https://localhost:8080/api/resubmit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(submittedData),
+    });
+    // Handle response or errors
     navigate('/confirm');
   };
   //const { t } = useTranslation();
   return (
     <div className='div-wrapper'>
-      <MyForm inputs={inputFields} onSubmit={handleRescheduleSubmit} buttonLabel={'Book'}/>
+      <MyForm inputs={inputFields} onSubmit={handleRescheduleSubmit} buttonLabel={'Reschedule'}/>
     </div>
   );
 }

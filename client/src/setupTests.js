@@ -4,6 +4,9 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
+import fetchMock from 'jest-fetch-mock';
+
 
 jest.mock('react-i18next');
+fetchMock.enableMocks();
 

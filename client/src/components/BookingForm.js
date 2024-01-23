@@ -1,6 +1,5 @@
 
 import { useNavigate} from 'react-router-dom';
-import { useState } from 'react';
 //import { useTranslation } from 'react-i18next';
 //import TimeInput from './TimeInput';
 import MyForm from './MyForm';
@@ -11,13 +10,17 @@ import { inputFields } from './text_files/booking_inputs';
 function BookingForm() {
   //const { t } = useTranslation();
   let navigate = useNavigate();
-  const [formData, setFormData] = useState({});
-  
-  const handleBookingSubmit = (submittedData) => {
-    // Add form submission logic here
-    // Go to Confirmation Page for Now
-    setFormData(submittedData);
-    console.log(submittedData);
+
+  const handleBookingSubmit = async (submittedData) => {
+    //setFormData(submittedData);
+    await fetch('https://localhost:8080/api/submit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(submittedData),
+    });
+    // Handle response or errors
     navigate('/confirm');
   };
 
