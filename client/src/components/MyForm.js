@@ -9,16 +9,23 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
   const validateForm = () => {
     let newErrors = {};
     inputs.forEach(input => {
+      const value = formData[input.name];
       if (!formData[input.name]) {
         newErrors[input.name] = { errorMessage: `${input.labelText} is required.` };
-      }
+      } else if (input.name === 'email' && value && !/^\S+@\S+\.\S+$/.test(value)) {
+        newErrors[input.name] = { errorMessage: 'Invalid email address' };
+      } else if (input.name === 'phone' && value && !/^\+?([0-9]{1,3})\)?([0-9]{3,})$/.test(value)) {
+        newErrors[input.name] = { errorMessage: 'Invalid phone number' };
+      } else if (input.type === 'text' && value && !/^[A-Za-z ]+$/.test(value)) {
+        // Assuming you want to apply this check to all text inputs
+        newErrors[input.name] = { errorMessage: 'Invalid. Only letters are allowed' };
+      };
     })
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleChange = (event) => {
-    //const { name, value } = event.target;
     setFormData({ 
       ...formData, 
       [event.target.name]: event.target.value });
