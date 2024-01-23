@@ -3,7 +3,7 @@ import { render, fireEvent, waitFor, screen} from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import RescheduleForm from '../RescheduleForm';
 
-describe('Reschedule Form submits', () => {
+describe('Reschedule Form', () => {
   beforeEach(() => {
     fetch.resetMocks();
   });

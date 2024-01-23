@@ -1,21 +1,22 @@
 import React from 'react';
 import { render, fireEvent, waitFor, screen} from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import LocationCapture from '../LocationCapture';
 import SearchForm from '../SearchForm';
 
-describe('Search Form submits', () => {
+describe('Search Form', () => {
   beforeEach(() => {
     fetch.resetMocks();
   });
 
-  it('submits search form data and handles the response', async () => {
-    fetch.mockResponseOnce(JSON.stringify({ success: true }));
+  it('makes fetch call accurately', async () => {
+    fetch.mockResponseOnce(JSON.stringify({ date: '2024-01-08', time: '15:38' }));
 
-    render(
-      <Router>
-          <SearchForm />
-      </Router>
-    );
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <SearchForm />
+    </MemoryRouter>
+  );
 
     // Simulate user interaction
     fireEvent.change(screen.getByLabelText(/Email/), { target: { value: 'beckylashua@gmail.com' } });
@@ -35,6 +36,34 @@ describe('Search Form submits', () => {
           })
         })
       );
+    });
+  });
+
+  it('navigates to the appointments page after submission', async () => {
+    fetch.mockResponseOnce(JSON.stringify({ date: '2024-01-08', time: '15:38' }));
+  
+    let testLocation;
+    const setLocation = (location) => {
+      testLocation = location;
+    };
+
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <Routes>
+          <Route path="/" element={<SearchForm />} />
+          <Route path="*" element={<LocationCapture setLocation={setLocation} />} />
+        </Routes>
+      </MemoryRouter>
+    );
+  
+    // Simulate user interaction
+    fireEvent.change(screen.getByLabelText(/Email/), { target: { value: 'beckylashua@gmail.com' } });
+    fireEvent.click(screen.getByText(/Search/));
+
+    await waitFor(() => {
+      // If the fetch call and navigation are closely tied together without intermediate states
+      //expect(fetch).toHaveBeenCalledTimes(1);
+      expect(testLocation.pathname).toBe('/appointments');
     });
   });
 });
