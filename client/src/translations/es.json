@@ -11,6 +11,7 @@
   "homeReturnButton": "Regresar a la Página Principal",
   "manageApptButton": "Administrar Citas",
   "anotherBookingButton": "Agendar Otra Cita",
+  "tryAgainBooking": "Intentar otra vez",
   "confirmationTitle": "Confirmación de Cita",
   "errorTitle": "Error de Confirmación",
   "bookingSuccess": "¡Felicidades! Ha reservado esta cita con éxito.",
