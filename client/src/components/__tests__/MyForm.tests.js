@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, findByRole } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MyForm from '../MyForm';
-import { inputFields } from '../../mock_data/mock_booking';
+import { inputFields } from '../text_files/booking_inputs';
 
 const handleSubmit = (data) => {
   console.log('Form Data:', data);
@@ -25,13 +25,13 @@ describe('tests for a mock booking form', () => {
   });
 
   // Test user interaction
-  test('booking form can be filled out by user (excluding date/time)', () => {
+  test('booking form can be filled out by user (excluding date/time)', async () => {
     render(<MyForm inputs={inputFields} onSubmit={handleSubmit} buttonLabel={'Book'}/>);
-    userEvent.type(screen.getByLabelText(/first name/i), 'Jane');
-    userEvent.type(screen.getByLabelText(/last name/i), 'Doe');
-    userEvent.type(screen.getByLabelText(/email/i), 'janedoe@gmail.com');
-    userEvent.type(screen.getByLabelText(/phone/i), '1-555-333-4444');
-    userEvent.click(screen.getByRole('button', { name: /book/i }));
+    await userEvent.type(screen.getByLabelText(/first name/i), 'Jane');
+    await userEvent.type(screen.getByLabelText(/last name/i), 'Doe');
+    await userEvent.type(screen.getByLabelText(/email/i), 'janedoe@gmail.com');
+    await userEvent.type(screen.getByLabelText(/phone/i), '1-555-333-4444');
+    await userEvent.click(screen.getByRole('button', { name: /book/i }));
   });
 
   test('date input can be filled out by user', async () => {

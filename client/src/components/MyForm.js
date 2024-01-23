@@ -18,6 +18,7 @@ function Form( { inputs, onSubmit, buttonLabel }) {
     onSubmit(formData);
   };
 
+  /*
   const validateForm = (inputs) => {
     let newErrors = {};
     for (let i = 0; i < inputs.length; i++) {
@@ -28,6 +29,7 @@ function Form( { inputs, onSubmit, buttonLabel }) {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+  */
   
 
   return (
