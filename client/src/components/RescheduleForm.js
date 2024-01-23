@@ -11,8 +11,7 @@ function RescheduleForm() {
   let navigate = useNavigate();
   
   const handleRescheduleSubmit = async (submittedData) => {
-    //setFormData(submittedData);
-    await fetch('https://localhost:8080/api/resubmit-form', {
+    await fetch('https://localhost:8080/api/reschedule-appts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -3,12 +3,12 @@ import { render, fireEvent, waitFor, screen} from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import RescheduleForm from '../RescheduleForm';
 
-describe('Booking Form submits', () => {
+describe('Reschedule Form submits', () => {
   beforeEach(() => {
     fetch.resetMocks();
   });
 
-  it('submits booking form data and handles the response', async () => {
+  it('submits reschedule form data and handles the response', async () => {
     fetch.mockResponseOnce(JSON.stringify({ success: true }));
 
     render(
@@ -25,7 +25,7 @@ describe('Booking Form submits', () => {
     await waitFor(() => {
       // Check if the fetch was called correctly
       expect(fetch).toHaveBeenCalledWith(
-        'https://localhost:8080/api/resubmit-form', // URL you expect to call
+        'https://localhost:8080/api/reschedule-appts', // URL you expect to call
         expect.objectContaining({
           method: 'POST',
           headers: expect.objectContaining({
