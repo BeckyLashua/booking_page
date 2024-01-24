@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, findByRole } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MyForm from '../MyForm';
-import { inputFields } from '../text_files/booking_inputs';
+import { inputFields } from './text_files/booking_inputs';
 
 const handleSubmit = (data) => {
   console.log('Form Data:', data);
@@ -49,17 +49,4 @@ describe('tests for a mock booking form', () => {
     await userEvent.type(timeInput, '10:30');
     expect(timeInput.value).toBe('10:30');
   });
-
-  /* Test validation and error messages
-  test('displays a validation message for missing required field', () => {
-    render(<MyForm inputs={inputFields} onSubmit={handleSubmit} buttonLabel={'Book'}/>);
-
-    // Assuming the form has an optional 'name' field and a required 'email' field
-    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: 'John' } });
-     
-    // Check for validation message for the 'email' field
-    expect(screen.getByText(/email is required/i)).toBeInTheDocument();
-  });
-  */
-  // Test Form submission 
 });

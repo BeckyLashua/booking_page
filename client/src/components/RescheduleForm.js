@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
 //import TimeInput from './TimeInput';
 import MyForm from './MyForm';
-import { inputFields } from './text_files/reschedule_inputs';
+import { inputFields } from './__tests__/text_files/reschedule_inputs';
 
 import '../App.css';
 

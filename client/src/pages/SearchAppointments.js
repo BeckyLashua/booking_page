@@ -4,7 +4,7 @@ import SearchForm from '../components/SearchForm';
 import t from '../translations/en.json';
 import '../App.css';
 
-function ManageAppointments() {
+function SearchAppointments() {
   //const { t } = useTranslation();
   
   return (
@@ -24,4 +24,4 @@ function ManageAppointments() {
   );
 }
 
-export default ManageAppointments;
+export default SearchAppointments;

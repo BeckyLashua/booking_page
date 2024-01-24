@@ -5,7 +5,7 @@ import BookAppointment from './pages/BookAppointment';
 import RescheduleAppointment from './pages/RescheduleAppointment';
 import ConfirmAppointment from './pages/ConfirmAppointment';
 import Appointments from './pages/Appointments';
-import ManageAppointments from './pages/ManageAppointments';
+import SearchAppointments from './pages/SearchAppointments';
 import Error from './pages/Error';
 //import LanguageToggle from './components/LanguageToggle';
 //import { useTranslation } from 'react-i18next';
@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/reschedule" element={<RescheduleAppointment />} />
           <Route exact path="/confirm" element={<ConfirmAppointment />} />
           <Route exact path="/appointments" element={<Appointments />} />
-          <Route exact path="/manage" element={<ManageAppointments />} />
+          <Route exact path="/search" element={<SearchAppointments />} />
           <Route exact path="/error" element={<Error />} />
         </Routes>
       </Router>

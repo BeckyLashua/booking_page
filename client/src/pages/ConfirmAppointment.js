@@ -16,7 +16,7 @@ function ConfirmAppointment( ) {
           {t.anotherBookingButton}
           </button>
         </Link>
-        <Link to='/manage'>
+        <Link to='/search'>
           <button className='return-button'>
           {t.manageApptButton}
           </button>

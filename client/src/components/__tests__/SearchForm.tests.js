@@ -65,5 +65,5 @@ describe('Search Form', () => {
       //expect(fetch).toHaveBeenCalledTimes(1);
       expect(testLocation.pathname).toBe('/appointments');
     });
-  });
+  })
 });
