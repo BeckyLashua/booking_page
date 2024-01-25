@@ -41,3 +41,5 @@ class AppointmentTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Appointment.objects.count(), 2) 
         self.assertEqual(Appointment.objects.last().lastname, 'Smith')
+
+      # Will add more tests later
