@@ -21,7 +21,7 @@ function BookingItemCard( {appt} ) {
   
   return (
     <div className='div-wrapper'>
-      <BookingItem appt={appt}/>
+      {appt && <BookingItem appt={appt}/>}
       <Link to='/reschedule'>
         <button className='form-button'>
           {t.rescheduleButton}

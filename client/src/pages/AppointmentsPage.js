@@ -25,12 +25,7 @@ function AppointmentsPage( { appts }) {
 }, []);
 */
 
-  let appts_test = [
-    {id: 1, date: '7/03/24', time: '10:30am'},
-    {id: 2, date: '9/30/24', time: '4:00pm'},
-    {id: 3, date: '10/02/24', time: '1:00pm'}
-  ];
-  
+  const apptArray = [appts];
   //const { t } = useTranslation();
 
   return (
@@ -48,7 +43,7 @@ function AppointmentsPage( { appts }) {
         </Link><br />
       </div>
       <h2>{t.appointmentsHeader}</h2>
-      <BookingList appts = { appts_test }/>
+      <BookingList appts = { apptArray }/>
     </div>
   );
 }
