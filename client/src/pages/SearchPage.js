@@ -12,20 +12,8 @@ function SearchPage() {
   //const { t } = useTranslation();
   let navigate = useNavigate();
 
-  const onSearchSubmit = async (submittedEmail) => {
-    try {
-      // Construct the URL with the query parameter
-      //const url = `https://localhost:8080/api/appointments?email=${encodeURIComponent(submittedEmail)}`;
-      const url = 'http://localhost:8000/api/mock-appointments/';
-      const response = await axios.get(url);
-      const data = response.data;
-      console.log(data);
-
-      // Use navigate with state to pass the appointments data
-      navigate('/appointments', { appts: data });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
+  const handleSubmit = async (submittedEmail) => {
+    navigate('/appointments', { state: { submittedEmail }})
   };
 
   return (
@@ -41,7 +29,7 @@ function SearchPage() {
         <h2>{t.manageApptButton}</h2>
         <MyForm 
           inputs ={inputFields}
-          onSubmit={onSearchSubmit}
+          onSubmit={handleSubmit}
           buttonLabel={'Search'}
         />
       </div>

@@ -8,25 +8,28 @@ import t from '../texts/translations/en.json';
 import '../App.css';
 
 
-function AppointmentsPage( { appts }) {
-  //const location = useLocation();
-  //const { appts } = location.state;
-  /*const [appointments, setAppointments] = useState([]);
-  
-  useEffect(() => {
-    axios.get('http://localhost:8000/api/appointments/')
-        .then(response => {
-            // Handle the data
-            setAppointments(response.data);
-        })
-        .catch(error => {
-            console.error('There was an error!', error);
-        });
-}, []);
-*/
-
-  const apptArray = [appts];
+function AppointmentsPage( { submittedEmail }) {
   //const { t } = useTranslation();
+
+  const [appts, setAppts] = useState([]);
+  const location = useLocation();
+  const searchInput = location.state?.submittedEmail; // Access the passed search input
+
+  useEffect(() => {
+    const fetchAppointments = async () => {
+      if (!searchInput) return; 
+
+      try {
+        const url = `http://localhost:8000/api/mock-appointments?query=${encodeURIComponent(searchInput)}`;
+        const response = await axios.get(url);
+        setAppts(response.data);
+      } catch (error) {
+        console.error('Error fetching appointments:', error);
+      }
+    };
+
+    fetchAppointments();
+  }, [searchInput]); 
 
   return (
     <div>
@@ -43,7 +46,7 @@ function AppointmentsPage( { appts }) {
         </Link><br />
       </div>
       <h2>{t.appointmentsHeader}</h2>
-      <BookingList appts = { apptArray }/>
+      <BookingList appts = { appts }/>
     </div>
   );
 }
