@@ -1,5 +1,5 @@
 //import { useTranslation } from 'react-i18next';
-import t from '../translations/en.json';
+import t from '../texts/translations/en.json';
 
 import '../styles/BookingItem.css';
 

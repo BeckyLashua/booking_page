@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import BookAppointment from './pages/BookAppointment';
-import RescheduleAppointment from './pages/RescheduleAppointment';
-import ConfirmAppointment from './pages/ConfirmAppointment';
-import Appointments from './pages/Appointments';
-import SearchAppointments from './pages/SearchAppointments';
-import Error from './pages/Error';
+import AppointmentsPage from './pages/AppointmentsPage';
+import BookingPage from './pages/BookingPage';
+import ConfirmationPage from './pages/ConfirmationPage';
+import ErrorPage from './pages/ErrorPage';
+import HomePage from './pages/HomePage';
+import ReschedulePage from './pages/ReschedulePage';
+import SearchPage from './pages/SearchPage';
 //import LanguageToggle from './components/LanguageToggle';
 //import { useTranslation } from 'react-i18next';
-import t from './translations/en.json';
+import t from './texts/translations/en.json';
 
 import './App.css';
 
@@ -23,13 +23,13 @@ function App() {
       </header>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/book" element={<BookAppointment />} />
-          <Route exact path="/reschedule" element={<RescheduleAppointment />} />
-          <Route exact path="/confirm" element={<ConfirmAppointment />} />
-          <Route exact path="/appointments" element={<Appointments />} />
-          <Route exact path="/search" element={<SearchAppointments />} />
-          <Route exact path="/error" element={<Error />} />
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/book" element={<BookingPage />} />
+          <Route exact path="/reschedule" element={<ReschedulePage />} />
+          <Route exact path="/confirmation" element={<ConfirmationPage />} />
+          <Route exact path="/appointments" element={<AppointmentsPage />} />
+          <Route exact path="/search" element={<SearchPage />} />
+          <Route exact path="/error" element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>

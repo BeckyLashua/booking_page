@@ -1,24 +1,22 @@
 import { Link } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
-import t from '../translations/en.json';
+import t from '../texts/translations/en.json';
 import '../App.css';
 
-function Error( ) {
+function HomePage() {
   //const { t } = useTranslation();
-  
+
   return (
     <div>
-      <h2>{t.errorTitle}</h2>
-      <p>{t.bookingError}</p>
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t.tryAgainBooking}
+          {t.headerBooking}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t.manageApptButton}
+          {t.manageApptButton} 
           </button>
         </Link><br />
       </div>
@@ -26,4 +24,4 @@ function Error( ) {
   );
 }
 
-export default Error;
+export default HomePage;

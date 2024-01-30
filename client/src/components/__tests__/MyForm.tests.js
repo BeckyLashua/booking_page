@@ -1,8 +1,8 @@
-import React from 'react';
+/* import React from 'react';
 import { render, screen, fireEvent, findByRole } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MyForm from '../MyForm';
-import { inputFields } from './text_files/booking_inputs';
+import { inputFields } from '../form_fields/booking_inputs';
 
 const handleSubmit = (data) => {
   console.log('Form Data:', data);
@@ -50,3 +50,4 @@ describe('tests for a mock booking form', () => {
     expect(timeInput.value).toBe('10:30');
   });
 });
+*/

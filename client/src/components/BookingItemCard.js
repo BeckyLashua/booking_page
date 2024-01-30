@@ -1,7 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
 import BookingItem from './BookingItem';
-import t from '../translations/en.json';
+import t from '../texts/translations/en.json';
 
 import '../App.css';
 

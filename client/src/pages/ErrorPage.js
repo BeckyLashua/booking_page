@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
-import t from '../translations/en.json';
+import t from '../texts/translations/en.json';
 import '../App.css';
 
-function ConfirmAppointment( ) {
+function ErrorPage( { message } ) {
   //const { t } = useTranslation();
   
   return (
     <div>
-      <h2>{t.confirmationTitle}</h2>
-      <p>{t.bookingSuccess}</p>
+      <h2>{t.errorTitle}</h2>
+      <p>{t.bookingError}</p>
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t.anotherBookingButton}
+          {t.tryAgainBooking}
           </button>
         </Link>
         <Link to='/search'>
@@ -26,4 +26,4 @@ function ConfirmAppointment( ) {
   );
 }
 
-export default ConfirmAppointment;
+export default ErrorPage;
