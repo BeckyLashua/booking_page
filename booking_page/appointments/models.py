@@ -1,7 +1,7 @@
 from django.db import models
 
 class Appointment(models.Model):
-    appt_id = models.IntegerField(primary_key=True)cd 
+    appt_id = models.IntegerField(primary_key=True)
     client_first_name = models.CharField(max_length=100)
     client_last_name = models.CharField(max_length=100)
     client_phone = models.CharField(max_length=15)
