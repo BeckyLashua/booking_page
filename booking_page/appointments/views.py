@@ -27,7 +27,7 @@ class MockAppointmentAPIView(APIView):
     def get(self, request, *args, **kwargs):
         # Mock appointment data
         mock_appointments = [
-            {'id': 1, 'date': '2024-01-10', 'time': '08:05:06', 'email': 'user1@example.com'},
+            {'appt_id': 1, 'appt_date': '2024-01-10', 'appt_time': '08:05:06', 'client_email': 'user1@example.com'},
             # Add more mock appointments as needed
         ]
         return Response(mock_appointments)  # Return the mock data as a JSON response 

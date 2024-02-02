@@ -81,14 +81,24 @@ WSGI_APPLICATION = 'booking_page.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
+'''
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'appointments',  
         'USER': 'postgres',  
-        'PASSWORD': 'Orphan718',  
+        'PASSWORD': '123456',  
         'HOST': 'localhost',  
         'PORT': '5432',  
     }
 }
+'''
 
 
 # Password validation

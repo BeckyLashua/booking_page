@@ -14,13 +14,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Appointment',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('firstname', models.CharField(max_length=100)),
-                ('lastname', models.CharField(max_length=100)),
-                ('phone', models.CharField(max_length=15)),
-                ('email', models.EmailField(max_length=254)),
-                ('date', models.DateField()),
-                ('time', models.TimeField()),
+                ('appt_id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('client_first_name', models.CharField(max_length=100)),
+                ('client_last_name', models.CharField(max_length=100)),
+                ('client_phone', models.CharField(max_length=15)),
+                ('client_email', models.EmailField(max_length=254)),
+                ('appt_date', models.DateField()),
+                ('appt_time', models.TimeField()),
             ],
         ),
     ]
