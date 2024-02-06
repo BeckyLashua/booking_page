@@ -20,7 +20,7 @@ function AppointmentsPage( { submittedEmail }) {
       if (!searchInput) return; 
 
       try {
-        const url = `http://localhost:8000/api/mock-appointments?query=${encodeURIComponent(searchInput)}`;
+        const url = `http://localhost:8000/api/get-appointment?email=${encodeURIComponent(searchInput)}`;
         const response = await axios.get(url);
         setAppts(response.data);
       } catch (error) {
