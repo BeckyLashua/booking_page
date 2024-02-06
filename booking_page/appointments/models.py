@@ -2,8 +2,8 @@ from django.db import models
 
 class Appointment(models.Model):
     appt_id = models.AutoField(primary_key=True)
-    client_first_name = models.CharField(max_length=100)
-    client_last_name = models.CharField(max_length=100)
+    client_first_name = models.CharField(max_length=255)
+    client_last_name = models.CharField(max_length=255)
     client_phone = models.CharField(max_length=15)
     client_email = models.EmailField()
     appt_date = models.DateField()
