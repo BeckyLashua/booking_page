@@ -13,9 +13,6 @@ class AppointmentViewSet(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
 
-    from django.http import JsonResponse
-from .models import Appointment
-
 def get_appointment_by_email(request):
     # Get the email from request parameters
     email = request.GET.get('email', None)
@@ -27,9 +24,9 @@ def get_appointment_by_email(request):
             # Prepare the data to send back
             data = {
                 'appt_id': appointment.appt_id,
-                'client_first_name': appointment.client_first_name,
-                'client_last_name': appointment.client_last_name,
-                'client_phone': appointment.client_phone,
+                #'client_first_name': appointment.client_first_name,
+                #'client_last_name': appointment.client_last_name,
+                #'client_phone': appointment.client_phone,
                 'client_email': appointment.client_email,
                 'appt_date': appointment.appt_date,
                 'appt_time': appointment.appt_time,
