@@ -14,4 +14,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
                   'appt_time'
                   ]  
         
-
+class AppointmentUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Appointment
+        fields = ('appt_date', 'appt_time')  
