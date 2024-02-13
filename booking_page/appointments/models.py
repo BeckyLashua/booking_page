@@ -11,3 +11,6 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"{self.client_first_name} {self.client_last_name} with email {self.client_email} on {self.appt_date} at {self.appt_time}"
+
+    class Meta:
+        db_table = 'appointment'
