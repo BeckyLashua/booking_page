@@ -32,35 +32,21 @@ class AppointmentViewSet(viewsets.ModelViewSet):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    '''
     
-class MockAppointmentAPIView(APIView):
-    def get(self, request, *args, **kwargs):
-        # Mock appointment data
-        mock_appointments = [
-            {'appt_id': 1, 'appt_date': '2024-01-10', 'appt_time': '08:05:06', 'client_email': 'user1@example.com'},
-            # Add more mock appointments as needed
-        ]
-        email = request.GET.get('email', None)
-
-        if email is not None:
-            # Search for the appointment by email
-            try:
-                appointment = Appointment.objects.get(client_email=email)
-                # Prepare the data to send back
-                data = {
-                    'appt_id': appointment.appt_id,
-                    #'client_first_name': appointment.client_first_name,
-                    #'client_last_name': appointment.client_last_name,
-                    #'client_phone': appointment.client_phone,
-                    'client_email': appointment.client_email,
-                    'appt_date': appointment.appt_date,
-                    'appt_time': appointment.appt_time,
-                }
-                return JsonResponse(data, safe=False)
-            except Appointment.DoesNotExist:
-                return JsonResponse({'error': 'Appointment not found'}, status=404)
-        else:
-            return JsonResponse({'error': 'Email parameter is required'}, status=400)
-            
-            '''
+    @action(detail=False, methods=['delete'], url_path='delete-by-email/(?P<email>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})')
+    def update_by_email(self, request, email=None):
+        appointment = get_object_or_404(Appointment, client_email=email)
+        
+        # Use a serializer to validate and update the requested fields (e.g., appt_date and appt_time)
+        serializer = AppointmentUpdateSerializer(appointment, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    @action(detail=False, methods=['delete'], url_path='cancel-by-email/(?P<email>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})')
+    def cancel_by_email(self, request, email=None):
+        appointment = get_object_or_404(Appointment, client_email=email)
+        appointment.delete()
+        return Response({'message': 'Appointment canceled successfully'}, status=status.HTTP_204_NO_CONTENT)
