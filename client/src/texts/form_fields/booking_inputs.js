@@ -12,7 +12,7 @@ const inputFields = [
   { 
     inputClass: 'form-input',
     type: 'text',
-    name: 'client_last-name', 
+    name: 'client_last_name', 
     id: 'client_last_name',
     placeholder: '',
     labelClass: 'form-label',

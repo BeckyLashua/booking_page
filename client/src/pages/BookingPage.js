@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 import { useNavigate} from 'react-router-dom';
 import MyForm from '../components/MyForm';
 import { inputFields } from '../texts/form_fields/booking_inputs';
@@ -7,26 +8,26 @@ import t from '../texts/translations/en.json';
 
 import '../App.css';
 
+
 function BookingPage() {
-  //const { t } = useTranslation();
   let navigate = useNavigate();
 
   const onBookSubmit = async (submittedData) => {
     try {
-      const response = await fetch('https://localhost:8080/api/submit-booking', {
-        method: 'POST',
+      const response = await axios.post('http://localhost:8000/appointments/', submittedData, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ submittedData }),
       });
-      const data = await response.json();
+      const data = response.data;
 
-      navigate('/confirmation', { message: { data } });
+      navigate('/confirmation', { state: { data } });
     } catch (error) {
       console.error('Error fetching data:', error);
+      // Handle the error more gracefully, maybe show a message to the user
     }
   };
+
   return (
     <div>
       <div>
