@@ -36,8 +36,15 @@ class AppointmentViewSet(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-
 '''
+    @action(detail=False, methods=['post'], url_path='create-appt')
+    def create_appointment(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     @action(detail=False, methods=['delete'], url_path='cancel-by-email/(?P<email>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})')
     def cancel_by_email(self, request, email=None):
         appointment = get_object_or_404(Appointment, client_email=email)
