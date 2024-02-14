@@ -13,14 +13,13 @@ function AppointmentsPage( { submittedEmail }) {
 
   const [appts, setAppts] = useState([]);
   const location = useLocation();
-  const searchInput = location.state?.submittedEmail; // Access the passed search input
+  const searchInput = location.state?.submittedEmail; 
 
   useEffect(() => {
     const fetchAppointments = async () => {
       if (!searchInput) return; 
 
       try {
-        //const url = 'http://localhost:8000/appointments/by-email/john.doe@example.com';
         const url = `http://localhost:8000/appointments/get-appt-by-email/${encodeURIComponent(searchInput.email)}`;
         const response = await axios.get(url);
         setAppts(Array.isArray(response.data) ? response.data : [response.data]);

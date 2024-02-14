@@ -1,29 +1,39 @@
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
+import axios  from 'axios';
 import { inputFields } from '../texts/form_fields/reschedule_inputs';
 import MyForm from '../components/MyForm';
 import t from '../texts/translations/en.json';
 import '../App.css';
 
-function ReschedulePage() {
+function ReschedulePage( { email } ) {
   //const { t } = useTranslation();
   let navigate = useNavigate();
+  const location = useLocation();
+  const searchEmail = location.state?.email;
 
-  const onSearchSubmit = async (submittedData) => {
+  const handleFormSubmit = async (formData) => {
+    // Assuming formData is an object containing the updated appointment data
+    rescheduleAppointment(email, formData);
+  };
+
+  const rescheduleAppointment = async (email, updatedData) => {
+    console.log(updatedData);
     try {
-      const response = await fetch('https://localhost:8080/api/reschedule-booking', {
-        method: 'POST',
+      const url = `http://localhost:8000/appointments/update-by-email/${encodeURIComponent(searchEmail)}/`;
+      const response = await axios.patch(url, updatedData, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ submittedData }),
       });
-      const data = await response.json();
 
-      navigate('/confirmation', { message: { data } });
+      console.log('Appointment updated successfully:', response.data);
+      // Navigate to the appointments page with updated state
+      navigate('/appointments', { state: { email } });
+
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error updating appointment:', error.response);
     }
   };
 
@@ -39,7 +49,7 @@ function ReschedulePage() {
       <h2>{t.rescheduleTitle}</h2>
       <MyForm
         inputs={inputFields}
-        onSubmit={onSearchSubmit}
+        onSubmit={handleFormSubmit}
         buttonLabel={'Reschedule'}
       />
     </div>
