@@ -20,9 +20,11 @@ function AppointmentsPage( { submittedEmail }) {
       if (!searchInput) return; 
 
       try {
-        const url = `http://localhost:8000/api/get-appointment?email=${encodeURIComponent(searchInput)}`;
+        //const url = 'http://localhost:8000/appointments/by-email/john.doe@example.com';
+        const url = `http://localhost:8000/appointments/get-appt-by-email/${encodeURIComponent(searchInput.email)}`;
         const response = await axios.get(url);
-        setAppts(response.data);
+        setAppts(Array.isArray(response.data) ? response.data : [response.data]);
+
       } catch (error) {
         console.error('Error fetching appointments:', error);
       }
@@ -46,7 +48,7 @@ function AppointmentsPage( { submittedEmail }) {
         </Link><br />
       </div>
       <h2>{t.appointmentsHeader}</h2>
-      <BookingList appts = { appts }/>
+      {Array.isArray(appts) && <BookingList appts={appts} />}
     </div>
   );
 }
