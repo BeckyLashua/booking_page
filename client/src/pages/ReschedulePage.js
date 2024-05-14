@@ -21,7 +21,7 @@ function ReschedulePage( { email } ) {
   const rescheduleAppointment = async (email, updatedData) => {
     console.log(updatedData);
     try {
-      const url = `http://localhost:8000/appointments/update-by-email/${encodeURIComponent(searchEmail)}/`;
+      const url = `http://localhost:3001/api/appt/${encodeURIComponent(searchEmail)}/`;
       const response = await axios.patch(url, updatedData, {
         headers: {
           'Content-Type': 'application/json',
