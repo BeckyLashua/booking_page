@@ -23,7 +23,10 @@ function AppointmentsPage( { submittedEmail }) {
         const url = `http://localhost:3001/api/appts/${encodeURIComponent(searchInput.email)}`;
 
         const response = await axios.get(url);
-        setAppts(Array.isArray(response.data) ? response.data : [response.data]);
+        console.log("API Response:", response.data.appts);
+
+        //setAppts(Array.isArray(response.data) ? response.data : [response.data.appts]);
+        setAppts(response.data.appts);
       } catch (error) {
         console.error('Error fetching appointments:', error);
       }

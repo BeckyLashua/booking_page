@@ -6,7 +6,10 @@ function BookingList( { appts } ) {
     <div>
       <ul>
         {appts.map((appt) => (
-          <BookingItemCard appt = {appt}/>
+          <BookingItemCard 
+            key={appt.appt_id} 
+            appt = {appt}
+          />
         ))}
       </ul>
     </div>
