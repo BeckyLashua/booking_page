@@ -53,7 +53,7 @@ function AppointmentsPage( { submittedEmail }) {
       {Array.isArray(appts) && appts.length > 0 ? (
         <BookingList appts={appts} />
       ) : (
-          <p>No appointments found with that email.</p>
+          <p>No appointments to display.</p>
       )}
     </div>
   );

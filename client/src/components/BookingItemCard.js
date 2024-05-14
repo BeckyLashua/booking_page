@@ -20,7 +20,8 @@ function BookingItemCard( {appt} ) {
   }
 
   const handleRescheduleClick = () => {
-    navigate('/reschedule', { state: { email: appt.client_email } });
+    console.log("Navigating with id: ", appt.appt_id);
+    navigate(`/reschedule/${appt.appt_id}`, { state: { id: appt.appt_id } });
   };
 
   return (

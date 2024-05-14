@@ -14,7 +14,7 @@ function BookingPage() {
 
   const onBookSubmit = async (submittedData) => {
     try {
-      console.log(submittedData);
+      console.log("Booking form submitted data:", submittedData);
       const response = await axios.post('http://localhost:3001/api/appts', submittedData, {
         headers: {
           'Content-Type': 'application/json',

@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/book" element={<BookingPage />} />
-          <Route exact path="/reschedule" element={<ReschedulePage />} />
+          <Route exact path="/reschedule/:id" element={<ReschedulePage />} />
           <Route exact path="/confirmation" element={<ConfirmationPage />} />
           <Route exact path="/appointments" element={<AppointmentsPage />} />
           <Route exact path="/search" element={<SearchPage />} />
