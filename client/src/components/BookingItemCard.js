@@ -19,7 +19,6 @@ function BookingItemCard( {appt} ) {
     }
   }
 
-
   const handleRescheduleClick = () => {
     navigate('/reschedule', { state: { email: appt.client_email } });
   };

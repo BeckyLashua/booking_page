@@ -50,7 +50,11 @@ function AppointmentsPage( { submittedEmail }) {
         </Link><br />
       </div>
       <h2>{t.appointmentsHeader}</h2>
-      {Array.isArray(appts) && <BookingList appts={appts} />}
+      {Array.isArray(appts) && appts.length > 0 ? (
+        <BookingList appts={appts} />
+      ) : (
+          <p>No appointments found with that email.</p>
+      )}
     </div>
   );
 }
