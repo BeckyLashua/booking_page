@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import ReschedulePage from './pages/ReschedulePage';
 import SearchPage from './pages/SearchPage';
 import CancelConfirmation from './pages/CancelConfirmation';
+import RescheduleConfirmation from './pages/RescheduleConfirmation';
 //import LanguageToggle from './components/LanguageToggle';
 //import { useTranslation } from 'react-i18next';
 import t from './texts/translations/en.json';
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/reschedule/:id" element={<ReschedulePage />} />
           <Route exact path="/confirmation" element={<ConfirmationPage />} />
           <Route exact path="/cancel" element={<CancelConfirmation />} />
+          <Route exact path="/reschedule-confirmation" element={<RescheduleConfirmation />} />
           <Route exact path="/appointments" element={<AppointmentsPage />} />
           <Route exact path="/search" element={<SearchPage />} />
           <Route exact path="/error" element={<ErrorPage />} />

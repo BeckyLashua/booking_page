@@ -26,9 +26,10 @@
   "rescheduleButton": "Reprogramar",
   "cancelApptButton": "Cancelar",
   "cancelWarning": "¿Está seguro de que desea cancelar esta cita?",
+  "cancelConfirmation": "Ha cancelado exitosamente su cita.",
+  "cancelTitle": "Confirmación de cancelación de cita",
   "rescheduleInputDate": "Nueva Fecha Preferida",
   "rescheduleInputTime": "Nueva Hora Preferida",
   "rescheduleConfirmation": "¡Felicidades! Ha reprogramado exitosamente esta cita",
-  "rescheduleError": "Lo siento. Hubo un error al reprogramar esta cita. Inténtelo de nuevo.",
-  "cancelConfirmation": "Ha cancelado exitosamente su cita."
+  "rescheduleError": "Lo siento. Hubo un error al reprogramar esta cita. Inténtelo de nuevo."
 }

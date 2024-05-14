@@ -25,6 +25,8 @@
   "rescheduleTitle": "Reschedule Appointment",
   "rescheduleButton": "Reschedule",
   "cancelApptButton": "Cancel",
+  "cancelConfirmation": "You have successfully canceled your appointment.",
+  "cancelTitle": "Appointment Cancel Confirmation",
   "cancelWarning": "Are you sure you want to cancel this appointment?",
   "rescheduleInputDate": "New Preferred Date",
   "rescheduleInputTime": "New Preferred Time",

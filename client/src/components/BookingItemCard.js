@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 import BookingItem from './BookingItem';
 import t from '../texts/translations/en.json';
 
@@ -9,13 +10,21 @@ function BookingItemCard( {appt} ) {
   //const { t } = useTranslation();
   let navigate = useNavigate();
 
-  function handleCancelClick() {
+  function handleCancelClick(event) {
+    event.preventDefault();
     const userConfirmed = window.confirm("Are you sure you want to cancel your appointment?");
     
     if (userConfirmed) {
-      // User clicked 'OK'
-      // remove bookingitem from bookinglist
-      // Place your logic here for when the user confirms
+      axios.delete(`http://localhost:3001/api/appts/${appt.appt_id}`)
+      .then(response => {
+        console.log('Appointment deleted successfully');
+        navigate('/cancel');
+      })
+      .catch(error => {
+        console.error('Error deleting appointment:', error);
+        navigate('/apppointments');
+        // later handle error message to user
+      });
     }
   }
 
