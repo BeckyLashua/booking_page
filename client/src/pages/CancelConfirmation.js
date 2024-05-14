@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import t from '../texts/translations/en.json';
 import '../App.css';
 
-function ConfirmationPage( { message }) {
+function CancelConfirmation( { message }) {
   //const { t } = useTranslation();
   
   return (
     <div>
       <h2>{t.confirmationTitle}</h2>
-      <p>{message}</p>
+      <p>{t.CancelConfirmation}</p>
       <div>
         <Link to='/book'>
           <button className='return-button'>
@@ -26,4 +26,4 @@ function ConfirmationPage( { message }) {
   );
 }
 
-export default ConfirmationPage;
+export default CancelConfirmation;

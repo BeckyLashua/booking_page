@@ -29,5 +29,6 @@
   "rescheduleInputDate": "Nueva Fecha Preferida",
   "rescheduleInputTime": "Nueva Hora Preferida",
   "rescheduleConfirmation": "¡Felicidades! Ha reprogramado exitosamente esta cita",
-  "rescheduleError": "Lo siento. Hubo un error al reprogramar esta cita. Inténtelo de nuevo."
+  "rescheduleError": "Lo siento. Hubo un error al reprogramar esta cita. Inténtelo de nuevo.",
+  "cancelConfirmation": "Ha cancelado exitosamente su cita."
 }

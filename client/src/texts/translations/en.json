@@ -14,7 +14,7 @@
   "tryAgainBooking": "Try Again",
   "confirmationTitle": "Appointment Confirmation",
   "errorTitle": "Booking Error",
-  "bookingSuccess": "Congratulations! You have sucessfully booked this appointment!",
+  "bookingSuccess": "Congratulations! You have successfully booked this appointment!",
   "bookingError": "Sorry. There was an error in booking this appointment. Try Again.",
   "searchButton": "Search",
   "appointmentsHeader": "Appointments",
@@ -28,6 +28,6 @@
   "cancelWarning": "Are you sure you want to cancel this appointment?",
   "rescheduleInputDate": "New Preferred Date",
   "rescheduleInputTime": "New Preferred Time",
-  "rescheduleConfirmation": "Congrats! You have sucessfully rescheduled this appointment!",
+  "rescheduleConfirmation": "Congrats! You have successfully rescheduled this appointment!",
   "rescheduleError": "Sorry. There was an error in rescheduling this appointment. Try Again."
 }
