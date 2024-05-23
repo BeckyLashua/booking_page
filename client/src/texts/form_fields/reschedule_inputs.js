@@ -12,11 +12,11 @@ const inputFields = [
   { 
     inputClass: 'time-input',
     type: 'time',
-    name: 'appt_time', 
-    id: 'appt_time',
+    name: 'start_time', 
+    id: 'start_time',
     placeholder: '',
     labelClass: 'time-label',
-    labelHtmlFor: 'appt_time',
+    labelHtmlFor: 'start_time',
     labelText: 'Time',
   },
 ];
