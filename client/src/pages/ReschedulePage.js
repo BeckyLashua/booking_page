@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate, useLocation} from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
 import axios  from 'axios';
 import { inputFields } from '../texts/form_fields/reschedule_inputs';
@@ -11,6 +12,8 @@ function ReschedulePage() {
   const location = useLocation();
   const id = location.state?.id;
   let navigate = useNavigate();
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
 
   const onRescheduleSubmit = async (submittedData) => {
     try {
@@ -20,12 +23,11 @@ function ReschedulePage() {
           'Content-Type': 'application/json',
         },
       });
-      const data = response.data;
-      console.log('data.error.message: ', data.error.message);
-
-      navigate('/reschedule-confirmation', { messsage: data.message });
+      setMessage(response.data.message);
+      navigate('/reschedule-confirmation', { message: message });
     } catch (error) {
       console.error('Error updating appointment:', error);
+      setError('Sorry. This appointment time is already booked. Choose another time.')
     }
   };
 
@@ -45,6 +47,7 @@ function ReschedulePage() {
           onSubmit={onRescheduleSubmit}
           buttonLabel={'Reschedule'}
         />
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
     </div>
   );
