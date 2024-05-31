@@ -8,6 +8,7 @@ function ConfirmationPage( { message }) {
   
   return (
     <div>
+      <p>{ message }</p>
       <h2>{t.confirmationTitle}</h2>
       <p>{t.bookingSuccess}</p>
       <div>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate} from 'react-router-dom';
 import MyForm from '../components/MyForm';
@@ -11,6 +12,9 @@ import '../App.css';
 
 function BookingPage() {
   let navigate = useNavigate();
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+
 
   const onBookSubmit = async (submittedData) => {
     try {
@@ -20,12 +24,17 @@ function BookingPage() {
           'Content-Type': 'application/json',
         },
       });
-      const data = response.data;
 
-      navigate('/confirmation', { state: { data } });
+      setMessage(response.data.message);
+
+      navigate('/confirmation', { state: { message: message } });
     } catch (error) {
-      console.error('Error fetching data:', error);
-      // Handle the error more gracefully, maybe show a message to the user
+      if (error.response && error.response.status === 409) {
+        console.log("error.response: ", error.response);
+        setError('Sorry. This appointment time is already booked. Choose another time.');
+      } else {
+        setError('An error occured. Please try again.');
+      }
     }
   };
 
@@ -45,6 +54,7 @@ function BookingPage() {
           onSubmit={onBookSubmit}
           buttonLabel={'Book'}
         />
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
     </div>
   );

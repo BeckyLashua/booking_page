@@ -21,8 +21,9 @@ function ReschedulePage() {
         },
       });
       const data = response.data;
+      console.log('data.error.message: ', data.error.message);
 
-      navigate('/reschedule-confirmation', { state: { data } });
+      navigate('/reschedule-confirmation', { messsage: data.message });
     } catch (error) {
       console.error('Error updating appointment:', error);
     }
