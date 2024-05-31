@@ -13,7 +13,7 @@ function BookingItem( {appt} ) {
   return (
     <li data-testid='booking-item-1'>
         {t.apptCardDate} {formatDate(appt.appt_date)}<br />
-        {t.apptCardTime} {appt.start_time}<br />
+        {t.apptCardTime} {appt.start_time} <br />
     </li>
   );
 }
