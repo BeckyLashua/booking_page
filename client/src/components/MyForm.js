@@ -12,12 +12,11 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
       const value = formData[input.name];
       if (!formData[input.name]) {
         newErrors[input.name] = { errorMessage: `${input.labelText} is required.` };
-      } else if (input.name === 'email' && value && !/^\S+@\S+\.\S+$/.test(value)) {
+      } else if (input.name === 'client_email' && value && !/^\S+@\S+\.\S+$/.test(value)) {
         newErrors[input.name] = { errorMessage: 'Invalid email address' };
-      } else if (input.name === 'phone' && value && !/^\d{3}-\d{3}-\d{4}$/.test(value)) {
-        newErrors[input.name] = { errorMessage: 'Invalid phone number' };
+      } else if (input.name === 'client_phone' && value && !/^\d{3}-*\d{3}-*\d{4}$/.test(value)) {
+        newErrors[input.name] = { errorMessage: 'Invalid phone number. Must be a 10 digit number in the form of xxx-xxx-xxxx or xxxxxxxxxx' };
       } else if (input.type === 'text' && value && !/^[A-Za-z ]+$/.test(value)) {
-        // Assuming you want to apply this check to all text inputs
         newErrors[input.name] = { errorMessage: 'Invalid. Only letters are allowed' };
       };
     })
@@ -29,6 +28,11 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
     setFormData({ 
       ...formData, 
       [event.target.name]: event.target.value });
+
+      /*if (event.target.name === 'client_phone') {
+        onPhoneChange(event);
+      }
+      */
   };
   
   const handleSubmit = (event) => {
