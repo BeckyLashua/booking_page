@@ -1,22 +1,23 @@
 import { Link } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
-import t from '../texts/translations/en.json';
+//import t from '../texts/translations/en.json';
 import '../App.css';
+import { useTranslation } from 'react-i18next';
 
 function HomePage() {
-  //const { t } = useTranslation();
+  const { t} = useTranslation();
 
   return (
     <div>
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t.headerBooking}
+          {t('headerBooking')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t.manageApptButton} 
+          {t('manageApptButton')} 
           </button>
         </Link><br />
       </div>

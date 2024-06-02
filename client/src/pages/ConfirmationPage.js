@@ -1,25 +1,25 @@
 import { Link } from 'react-router-dom';
-//import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import t from '../texts/translations/en.json';
 import '../App.css';
 
 function ConfirmationPage( { message }) {
-  //const { t } = useTranslation();
+  const { t } = useTranslation();
   
   return (
     <div>
       <p>{ message }</p>
-      <h2>{t.confirmationTitle}</h2>
-      <p>{t.bookingSuccess}</p>
+      <h2>{t('confirmationTitle')}</h2>
+      <p>{t('bookingSuccess')}</p>
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t.anotherBookingButton}
+          {t('anotherBookingButton')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t.manageApptButton}
+          {t('manageApptButton')}
           </button>
         </Link><br />
       </div>

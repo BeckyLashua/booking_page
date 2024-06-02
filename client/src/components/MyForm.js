@@ -28,11 +28,6 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
     setFormData({ 
       ...formData, 
       [event.target.name]: event.target.value });
-
-      /*if (event.target.name === 'client_phone') {
-        onPhoneChange(event);
-      }
-      */
   };
   
   const handleSubmit = (event) => {

@@ -1,15 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import  axios  from 'axios';
-//import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import BookingList from '../components/BookingList';
-import t from '../texts/translations/en.json';
 
 import '../App.css';
 
 
 function AppointmentsPage( { submittedEmail }) {
-  //const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const [appts, setAppts] = useState([]);
   const location = useLocation();
@@ -40,20 +39,20 @@ function AppointmentsPage( { submittedEmail }) {
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t.headerBooking}
+          {t('headerBooking')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t.manageApptButton}
+          {t('manageApptButton')}
           </button>
         </Link><br />
       </div>
-      <h2>{t.appointmentsHeader}</h2>
+      <h2>{t('appointmentsHeader')}</h2>
       {Array.isArray(appts) && appts.length > 0 ? (
         <BookingList appts={appts} />
       ) : (
-          <p>No appointments to display.</p>
+          <p>{t('noAppts')}</p>
       )}
     </div>
   );

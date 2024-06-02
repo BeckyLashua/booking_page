@@ -69,9 +69,8 @@ const useTranslation = () => ({
   i18n: {
     changeLanguage: (lang) => {
       currentLanguage = lang;
-      return Promise.resolve(); // changeLanguage usually returns a promise
+      return Promise.resolve(); 
     },
-    // Mock other methods and properties from i18n as needed
   },
 });
 

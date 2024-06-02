@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate, useLocation} from 'react-router-dom';
-//import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import axios  from 'axios';
 import { inputFields } from '../texts/form_fields/reschedule_inputs';
 import MyForm from '../components/MyForm';
-import t from '../texts/translations/en.json';
 import '../App.css';
 
 function ReschedulePage() {
+  const { t} = useTranslation();
+
   const location = useLocation();
   const id = location.state?.id;
   let navigate = useNavigate();
@@ -42,16 +43,16 @@ function ReschedulePage() {
       <div>
         <Link to='/'>
           <button className='return-button'>
-            {t.homeReturnButton}
+            {t('homeReturnButton')}
           </button>
         </Link><br />
       </div>
       <div>
-        <h2>{t.headerReschedule}</h2>
+        <h2>{t('Reschedule')}</h2>
         <MyForm
-          inputs={inputFields} // Ensure these inputs are configured for rescheduling
+          inputs={inputFields} 
           onSubmit={onRescheduleSubmit}
-          buttonLabel={'Reschedule'}
+          buttonLabel={t('Reschedule')}
         />
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>

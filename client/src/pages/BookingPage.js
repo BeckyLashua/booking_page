@@ -5,12 +5,13 @@ import axios from 'axios';
 import { useNavigate} from 'react-router-dom';
 import MyForm from '../components/MyForm';
 import { inputFields } from '../texts/form_fields/booking_inputs';
-import t from '../texts/translations/en.json';
+import { useTranslation } from 'react-i18next';
 
 import '../App.css';
 
 
 function BookingPage() {
+  const { t} = useTranslation();
   let navigate = useNavigate();
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -45,12 +46,12 @@ function BookingPage() {
       <div>
         <Link to='/'>
           <button className='return-button'>
-            {t.homeReturnButton}
+            {t('homeReturnButton')}
           </button>
         </Link><br />
       </div>
       <div>
-        <h2>{t.headerBooking}</h2>
+        <h2>{t('headerBooking')}</h2>
         <MyForm
           inputs={inputFields}
           onSubmit={onBookSubmit}

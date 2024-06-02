@@ -1,5 +1,6 @@
 {
   "title": "Appointment Scheduler",
+  "toggleButton": "Español",
   "headerBooking": "Book an Appointment",
   "inputFirstName": "First Name",
   "inputLastName": "Last Name",
@@ -10,6 +11,7 @@
   "bookingButton": "Book",
   "homeReturnButton": "Go Back To Home Page",
   "manageApptButton": "Manage Appointments",
+  "noAppts": "No appointments to display.",
   "anotherBookingButton": "Book Another Appointment",
   "tryAgainBooking": "Try Again",
   "confirmationTitle": "Appointment Confirmation",
@@ -28,6 +30,7 @@
   "cancelConfirmation": "You have successfully canceled your appointment.",
   "cancelTitle": "Appointment Cancel Confirmation",
   "cancelWarning": "Are you sure you want to cancel this appointment?",
+  "reschedule": "Reschedule",
   "rescheduleInputDate": "New Preferred Date",
   "rescheduleInputTime": "New Preferred Time",
   "rescheduleConfirmation": "Congrats! You have successfully rescheduled this appointment!",

@@ -9,19 +9,24 @@ import ReschedulePage from './pages/ReschedulePage';
 import SearchPage from './pages/SearchPage';
 import CancelConfirmation from './pages/CancelConfirmation';
 import RescheduleConfirmation from './pages/RescheduleConfirmation';
-//import LanguageToggle from './components/LanguageToggle';
-//import { useTranslation } from 'react-i18next';
-import t from './texts/translations/en.json';
+import { useTranslation } from 'react-i18next';
 
 import './App.css';
 
 function App() {
-  //const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const handleToggle = () => {
+    const newLanguage = i18n.language === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(newLanguage);
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>{t.title}</h1>
+        <h1>{t('title')}</h1>
+        <button onClick={handleToggle}>
+          {i18n.language === 'en' ? 'Traducir al Español' : 'Translate to English'}
+        </button>
       </header>
       <Router>
         <Routes>

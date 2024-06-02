@@ -1,5 +1,6 @@
 {
   "title": "Programador de Citas",
+  "toggleButton": "English",
   "headerBooking": "Reservar una Cita",
   "inputFirstName": "Nombre",
   "inputLastName": "Apellido",
@@ -10,6 +11,7 @@
   "bookingButton": "Reservar",
   "homeReturnButton": "Regresar a la Página Principal",
   "manageApptButton": "Administrar Citas",
+  "noAppts": "No hay citas para mostrar",
   "anotherBookingButton": "Agendar Otra Cita",
   "tryAgainBooking": "Intentar otra vez",
   "confirmationTitle": "Confirmación de Cita",
@@ -28,6 +30,7 @@
   "cancelWarning": "¿Está seguro de que desea cancelar esta cita?",
   "cancelConfirmation": "Ha cancelado exitosamente su cita.",
   "cancelTitle": "Confirmación de cancelación de cita",
+  "reschedule": "Reprogramar",
   "rescheduleInputDate": "Nueva Fecha Preferida",
   "rescheduleInputTime": "Nueva Hora Preferida",
   "rescheduleConfirmation": "¡Felicidades! Ha reprogramado exitosamente esta cita",
