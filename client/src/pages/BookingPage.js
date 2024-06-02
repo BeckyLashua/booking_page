@@ -32,6 +32,8 @@ function BookingPage() {
       if (error.response && error.response.status === 409) {
         console.log("error.response: ", error.response);
         setError('Sorry. This appointment time is already booked. Choose another time.');
+      } else if (error.response && error.response.status === 400) {
+        setError('Sorry.The appointment date and time has passed. Choose another date and time.');
       } else {
         setError('An error occured. Please try again.');
       }
