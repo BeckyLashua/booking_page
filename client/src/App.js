@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>{t('title')}</h1>
+        <h1>{t('titles.appHeader')}</h1>
         <button onClick={handleToggle}>
           {i18n.language === 'en' ? 'Traducir al Español' : 'Translate to English'}
         </button>

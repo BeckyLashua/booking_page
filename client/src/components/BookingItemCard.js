@@ -2,17 +2,18 @@ import { useNavigate } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import BookingItem from './BookingItem';
-import t from '../texts/translations/en.json';
+import { useTranslation } from 'react-i18next';
+
 
 import '../App.css';
 
 function BookingItemCard( {appt} ) {
-  //const { t } = useTranslation();
+  const { t } = useTranslation();
   let navigate = useNavigate();
 
   function handleCancelClick(event) {
     event.preventDefault();
-    const userConfirmed = window.confirm("Are you sure you want to cancel your appointment?");
+    const userConfirmed = window.confirm(t('messages.cancelWarning'));
     
     if (userConfirmed) {
       axios.delete(`http://localhost:3001/api/appts/${appt.appt_id}`)
@@ -37,11 +38,11 @@ function BookingItemCard( {appt} ) {
     <div className='div-wrapper'>
       {appt && <BookingItem appt={appt}/>}
          <button className='form-button' onClick={handleRescheduleClick}>
-          {t.rescheduleButton}
+          {t('buttons.reschedule')}
         </button>
       <br />
       <button className='form-button' onClick={handleCancelClick}>
-        {t.cancelApptButton}
+        {t('buttons.cancel')}
       </button>
     </div>
   );

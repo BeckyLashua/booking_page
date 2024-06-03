@@ -1,24 +1,23 @@
 import { Link } from 'react-router-dom';
-//import { useTranslation } from 'react-i18next';
-import t from '../texts/translations/en.json';
+import { useTranslation } from 'react-i18next';
 import '../App.css';
 
 function CancelConfirmation( { message }) {
-  //const { t } = useTranslation();
+const { t } = useTranslation();
   
   return (
     <div>
-      <h2>{t.cancelTitle}</h2>
-      <p>{t.cancelConfirmation}</p>
+      <h2>{t('titles.cancelConfirmationPage')}</h2>
+      <p>{t('messages.cancelConfirmation')}</p>
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t.anotherBookingButton}
+          {t('buttons.bookAgain')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t.manageApptButton}
+          {t('buttons.manageAppt')}   
           </button>
         </Link><br />
       </div>

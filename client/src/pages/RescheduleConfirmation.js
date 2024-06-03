@@ -7,17 +7,17 @@ function RescheduleConfirmation( { message }) {
   
   return (
     <div>
-      <h2>{t('confirmationTitle')}</h2>
-      <p>{t('rescheduleConfirmation')}</p>
+      <h2>{t('titles.confirmationPage')}</h2>
+      <p>{t('messages.rescheduleConfirmation')}</p>
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t('anotherBookingButton')}
+          {t('buttons.bookAgain')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t('manageApptButton')}
+          {t('buttons.manageAppt')}
           </button>
         </Link><br />
       </div>

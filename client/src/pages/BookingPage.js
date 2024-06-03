@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-//import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate} from 'react-router-dom';
@@ -32,9 +31,9 @@ function BookingPage() {
     } catch (error) {
       if (error.response && error.response.status === 409) {
         console.log("error.response: ", error.response);
-        setError('Sorry. This appointment time is already booked. Choose another time.');
+        setError(t('messages.doubleBooked'));
       } else if (error.response && error.response.status === 400) {
-        setError('Sorry.The appointment date and time has passed. Choose another date and time.');
+        setError(t('messages.pastDate'));
       } else {
         setError('An error occured. Please try again.');
       }
@@ -46,16 +45,16 @@ function BookingPage() {
       <div>
         <Link to='/'>
           <button className='return-button'>
-            {t('homeReturnButton')}
+            {t('buttons.goHome')}
           </button>
         </Link><br />
       </div>
       <div>
-        <h2>{t('headerBooking')}</h2>
+        <h2>{t('titles.appHeader')}</h2>
         <MyForm
           inputs={inputFields}
           onSubmit={onBookSubmit}
-          buttonLabel={'Book'}
+          buttonLabel={t('buttons.book')}
         />
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>

@@ -39,20 +39,20 @@ function AppointmentsPage( { submittedEmail }) {
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t('headerBooking')}
+          {t('buttons.bookAgain')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t('manageApptButton')}
+          {t('buttons.manageAppt')}
           </button>
         </Link><br />
       </div>
-      <h2>{t('appointmentsHeader')}</h2>
+      <h2>{t('titles.bookingPage')}</h2>
       {Array.isArray(appts) && appts.length > 0 ? (
         <BookingList appts={appts} />
       ) : (
-          <p>{t('noAppts')}</p>
+          <p>{t('messages.noAppts')}</p>
       )}
     </div>
   );

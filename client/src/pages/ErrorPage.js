@@ -7,17 +7,17 @@ function ErrorPage( { message } ) {
   
   return (
     <div>
-      <h2>{t('errorTitle')}</h2>
-      <p>{t('bookingError')}</p>
+      <h2>{t('titles.errorPage')}</h2>
+      <p>{t('messages.bookingError')}</p>
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t('tryAgainBooking')}
+          {t('buttons.bookAgain')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t('manageApptButton')}
+          {t('buttons.manageAppt')}
           </button>
         </Link><br />
       </div>

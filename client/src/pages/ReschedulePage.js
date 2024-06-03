@@ -29,9 +29,9 @@ function ReschedulePage() {
     } catch (error) {
       if (error.response && error.response.status === 409) {
         console.log("error.response: ", error.response);
-        setError('Sorry. This appointment time is already booked. Choose another time.');
+        setError(t('messages.doubleBooked'));
       } else if (error.response && error.response.status === 400) {
-        setError('Sorry.The appointment date and time has passed. Choose another date and time.');
+        setError(t('messages.pastDate'));
       } else {
         setError('An error occured. Please try again.');
       }
@@ -43,16 +43,16 @@ function ReschedulePage() {
       <div>
         <Link to='/'>
           <button className='return-button'>
-            {t('homeReturnButton')}
+            {t('buttons.goHome')}
           </button>
         </Link><br />
       </div>
-      <div>
-        <h2>{t('Reschedule')}</h2>
+      <div>s
+        <h2>{t('titles.rescheduleForm')}</h2>
         <MyForm
           inputs={inputFields} 
           onSubmit={onRescheduleSubmit}
-          buttonLabel={t('Reschedule')}
+          buttonLabel={t('buttons.reschedule')}
         />
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>

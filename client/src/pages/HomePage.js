@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-//import { useTranslation } from 'react-i18next';
-//import t from '../texts/translations/en.json';
 import '../App.css';
 import { useTranslation } from 'react-i18next';
 
@@ -12,12 +10,12 @@ function HomePage() {
       <div>
         <Link to='/book'>
           <button className='return-button'>
-          {t('headerBooking')}
+          {t('buttons.book')}
           </button>
         </Link>
         <Link to='/search'>
           <button className='return-button'>
-          {t('manageApptButton')} 
+          {t('buttons.manageAppt')} 
           </button>
         </Link><br />
       </div>

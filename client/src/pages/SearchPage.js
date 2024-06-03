@@ -18,16 +18,16 @@ function SearchPage() {
       <div>
         <Link to='/'>
           <button className='return-button'>
-            {t('homeReturnButton')}
+            {t('buttons.goHome')}
           </button>
         </Link><br />
       </div>
       <div className='div-wrapper'>
-        <h2>{t('manageApptButton')}</h2>
+        <h2>{t('buttons.manageAppt')}</h2>
         <MyForm 
           inputs ={inputFields}
           onSubmit={handleSubmit}
-          buttonLabel={t('searchButton')}
+          buttonLabel={t('buttons.search')}
         />
       </div>
     </div>
