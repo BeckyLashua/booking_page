@@ -10,7 +10,7 @@ import '../App.css';
 
 
 function BookingPage() {
-  const { t} = useTranslation();
+  const { t } = useTranslation();
   let navigate = useNavigate();
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
