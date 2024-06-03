@@ -19,7 +19,7 @@ function AppointmentsPage( { submittedEmail }) {
       if (!searchInput) return; 
 
       try {
-        const url = `http://localhost:3001/api/appts/${encodeURIComponent(searchInput.email)}`;
+        const url = `http://localhost:3001/api/appts/${encodeURIComponent(searchInput.client_email)}`;
 
         const response = await axios.get(url);
         console.log("API Response:", response.data.appts);
@@ -48,7 +48,7 @@ function AppointmentsPage( { submittedEmail }) {
           </button>
         </Link><br />
       </div>
-      <h2>{t('titles.bookingPage')}</h2>
+      <h2>{t('titles.apptsPage')}</h2>
       {Array.isArray(appts) && appts.length > 0 ? (
         <BookingList appts={appts} />
       ) : (

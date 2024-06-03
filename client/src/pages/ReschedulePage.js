@@ -47,7 +47,7 @@ function ReschedulePage() {
           </button>
         </Link><br />
       </div>
-      <div>s
+      <div>
         <h2>{t('titles.rescheduleForm')}</h2>
         <MyForm
           inputs={inputFields} 

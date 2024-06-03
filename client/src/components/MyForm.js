@@ -9,30 +9,12 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
 
-  const buildErrorString = (inputName) => {
-    let errorPrompt = '';
-    if (inputName === 'client_first_name') {
-      errorPrompt = t('forms.firstName');
-    } else if (inputName ==='client_last_name') {
-      errorPrompt = t('forms.lastName');
-    } else if (inputName ==='client_email') {
-      errorPrompt = t('forms.email');
-    } else if (inputName ==='client_phone') {
-      errorPrompt = t('forms.phone');
-    } else if (inputName ==='appt_date') {
-      errorPrompt = t('forms.date');
-    } else if (inputName ==='start_time') {
-      errorPrompt = t('forms.time');
-    } 
-    return errorPrompt += t('forms.isRequired');
-  }
-
   const validateForm = () => {
     let newErrors = {};
     inputs.forEach(input => {
       const value = formData[input.name];
       if (!formData[input.name]) {
-        newErrors[input.name] = { errorMessage: buildErrorString(input.name) };
+        newErrors[input.name] = { errorMessage: `${t(`forms.${input.name}`)} ${t('forms.isRequired')}` };
       } else if (input.name === 'client_email' && value && !/^\S+@\S+\.\S+$/.test(value)) {
         newErrors[input.name] = { errorMessage: t('forms.emailInvalid') };
       } else if (input.name === 'client_phone' && value && !/^\d{3}-*\d{3}-*\d{4}$/.test(value)) {
@@ -61,7 +43,9 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
       {inputs.map((input, index) => (
         <div key={index}>
           {errors[input.name] && <p style={{ color: 'red' }}>{errors[input.name].errorMessage}</p>}
-          <label className={input.labelClass} htmlFor={input.labelHtmlFor}>{input.labelText}</label>
+          <label className={input.labelClass} htmlFor={input.labelHtmlFor}>
+            {t(`forms.${input.name}`)}
+          </label>
           <input 
             className={input.inputClass}
             type={input.type}

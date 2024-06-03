@@ -2,11 +2,11 @@ const inputFields = [
   { 
     inputClass: 'form-input',
     type: 'email',
-    name: 'email', 
-    id: 'email',
+    name: 'client_email', 
+    id: 'client_email',
     placeholder: '',
     labelClass: 'form-label',
-    labelHtmlFor: 'email',
+    labelHtmlFor: 'client_email',
     labelText: 'Email',
   },
 ];
