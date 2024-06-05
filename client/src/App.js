@@ -10,24 +10,18 @@ import SearchPage from './pages/SearchPage';
 import CancelConfirmation from './pages/CancelConfirmation';
 import RescheduleConfirmation from './pages/RescheduleConfirmation';
 import { useTranslation } from 'react-i18next';
-
-import './App.css';
+import ResponsiveNavBar from './components/ResponsiveNavBar';
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const handleToggle = () => {
     const newLanguage = i18n.language === 'en' ? 'es' : 'en';
     i18n.changeLanguage(newLanguage);
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{t('titles.appHeader')}</h1>
-        <button onClick={handleToggle}>
-          {i18n.language === 'en' ? 'Traducir al Español' : 'Translate to English'}
-        </button>
-      </header>
+    <div>
+      <ResponsiveNavBar translationFunction = {handleToggle} />
       <Router>
         <Routes>
           <Route exact path="/" element={<HomePage />} />

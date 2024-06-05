@@ -1,8 +1,11 @@
 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { FormControl, FormLabel } from '@mui/material';
 import '../App.css';
+import { Form } from 'react-router-dom';
 
 function MyForm( { inputs, onSubmit, buttonLabel }) {
   const { t } = useTranslation();

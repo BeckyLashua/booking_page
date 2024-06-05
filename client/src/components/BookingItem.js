@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import '../styles/BookingItem.css';
+import '../App.css';
 
 function BookingItem( {appt} ) {
   const { t } = useTranslation();

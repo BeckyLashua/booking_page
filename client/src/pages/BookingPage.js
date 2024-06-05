@@ -7,6 +7,7 @@ import { inputFields } from '../texts/form_fields/booking_inputs';
 import { useTranslation } from 'react-i18next';
 
 import '../App.css';
+import BookingForm from '../components/BookingForm';
 
 
 function BookingPage() {
@@ -42,6 +43,7 @@ function BookingPage() {
 
   return (
     <div>
+      
       <div>
         <Link to='/'>
           <button className='return-button'>

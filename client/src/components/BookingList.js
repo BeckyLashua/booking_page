@@ -1,5 +1,5 @@
 import BookingItemCard from './BookingItemCard';
-import '../styles/BookingItem.css';
+import '../App.css';
 
 function BookingList( { appts } ) {
   return (
