@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import  axios  from 'axios';
 import { useTranslation } from 'react-i18next';
 import BookingList from '../components/BookingList';
-
+import { Typography, Grid, Button, Box} from '@mui/material';
 import '../App.css';
 
 
@@ -36,19 +36,29 @@ function AppointmentsPage( { submittedEmail }) {
 
   return (
     <div>
-      <div>
+
+      <Grid container justifyContent="center">
+        <Box> 
         <Link to='/book'>
-          <button className='return-button'>
-          {t('buttons.bookAgain')}
-          </button>
+        <Button 
+          variant="outlined" 
+          color="primary" 
+          >
+            {t('buttons.bookAgain')}
+        </Button>
         </Link>
         <Link to='/search'>
-          <button className='return-button'>
-          {t('buttons.manageAppt')}
-          </button>
+        <Button 
+          variant="outlined" 
+          color="primary">
+            {t('buttons.manageAppt')}
+        </Button>
         </Link><br />
-      </div>
-      <h2>{t('titles.apptsPage')}</h2>
+        </Box>
+      </Grid>
+      <Typography align="center"sx={{mb: 4}}>
+        <h3>{t('titles.apptsPage')}</h3>
+      </Typography>
       {Array.isArray(appts) && appts.length > 0 ? (
         <BookingList appts={appts} />
       ) : (

@@ -1,9 +1,10 @@
 import BookingItemCard from './BookingItemCard';
+import{ Box, Grid } from '@mui/material';
 import '../App.css';
 
 function BookingList( { appts } ) {
   return (
-    <div>
+      <Grid container justifyContent="center">
       <ul>
         {appts.map((appt) => (
           <BookingItemCard 
@@ -12,7 +13,7 @@ function BookingList( { appts } ) {
           />
         ))}
       </ul>
-    </div>
+      </Grid>
   );
 }
 

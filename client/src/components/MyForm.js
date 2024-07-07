@@ -61,7 +61,12 @@ function MyForm( { inputs, onSubmit, buttonLabel }) {
           <br />
         </div>
       ))}
-      <button type="submit">{buttonLabel}</button>
+      <Button 
+          variant="outlined" 
+          color="primary" 
+          type="submit">
+              {buttonLabel}
+      </Button>
     </form>
   );
 }

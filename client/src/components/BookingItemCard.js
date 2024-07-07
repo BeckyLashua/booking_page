@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import BookingItem from './BookingItem';
+import { Stack, Button, Box, Container, Grid } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 
@@ -24,7 +25,6 @@ function BookingItemCard( {appt} ) {
       .catch(error => {
         console.error('Error deleting appointment:', error);
         navigate('/apppointments');
-        // later handle error message to user
       });
     }
   }
@@ -35,16 +35,25 @@ function BookingItemCard( {appt} ) {
   };
 
   return (
-    <div className='div-wrapper'>
+    <Box>
+    <Grid container justifyContent="center">
       {appt && <BookingItem appt={appt}/>}
-         <button className='form-button' onClick={handleRescheduleClick}>
-          {t('buttons.reschedule')}
-        </button>
-      <br />
-      <button className='form-button' onClick={handleCancelClick}>
-        {t('buttons.cancel')}
-      </button>
-    </div>
+      <Stack spacing={2} direction="row" sx={{marginBottom: 4}}>
+        <Button 
+          variant="outlined" 
+          color="primary" 
+          onClick={handleRescheduleClick}>
+            {t('buttons.reschedule')}
+        </Button>
+        <Button 
+          variant="outlined" 
+          color="error" 
+          onClick={handleCancelClick}>
+            {t('buttons.cancel')}
+        </Button>
+        </Stack>
+      </Grid>
+      </Box>
   );
 }
 

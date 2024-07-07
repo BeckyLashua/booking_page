@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 
 function ResponsiveNavBar( { translationFunction }) {
   const { t, i18n } = useTranslation();
+  const pages = ['Book Appointment', 'Manage Appointments'];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -18,7 +19,6 @@ function ResponsiveNavBar( { translationFunction }) {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {t('titles.appHeader')}

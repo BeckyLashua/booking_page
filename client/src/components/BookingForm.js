@@ -77,7 +77,12 @@ function BookingForm() {
               sx={{mb: 4}}
             />
           </Stack>
-          <Button variant="outlined" color="secondary" type="submit">{t('buttons.book')}</Button>
+          <Button 
+            variant="outlined" 
+            color="primary" 
+            type="submit">
+              {t('buttons.book')}
+          </Button>
         </form>
       </Grid>
     </Box>
