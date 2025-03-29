@@ -54,51 +54,39 @@ project-root/ │ ├── backend/ │ ├── appt-app/ # Node/Express back
 
 ---
 
+### 🔧 Setup Steps
 
-### 📦 Frontend Setup
-1. Open terminal and navigate to your `frontend/` directory.
-2. Clone the frontend repo:
-   <code>git clone https://github.com/username/repo.git</code>
-   
-3. Navigate into the repo and install dependencies:
-   <code>
-         cd booking_page
-         npm install
-         npm install react-i18next axios
-   </code>
-
-4. Navigate into the `client` folder and start the app:
-   <code>
-         cd client
-         npm start
-   </code> 
-
-You should see the app open in your browser.
+#### Clone the Repository
+   git clone https://github.com/your-username/booking-page.git
+   cd booking-page
 
 ---
 
-### 🖥️ Backend Setup
-1. Navigate to your `backend/` directory.
-2. Clone the backend repo:
-   <code>git clone https://github.com/BeckyLashua/appt-app.git</code>
+#### 📦 Frontend Setup
+#### Install Frontend Dependencies
+      cd frontend
+      npm install
+      npm install react-i18next axios
+#### To run the frontend:
+      npm start
 
-3. Navigate into the backend folder:
-   <code>
-      cd appt-app
-      npm install node
+---
+
+#### 🖥️ Backend Setup
+#### Install Backend Dependencies
+      cd backend
       npm install
       npm install moment
-   </code>
-
-4. Navigate to the src/ folder and run the server:
-   <code>
-      cd src
-      node server.js
-   </code>
+#### Open a new terminal tab:
+      cd backend
+      npm install
+      npm install moment
+#### Start the server:
+      node src/server.js
 
 ---
 
-### 🗃️ Database Setup
+#### 🗃️ Database Setup
 Download MariaDB and install for your OS.
 
 During setup, save your:
