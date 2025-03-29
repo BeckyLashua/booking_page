@@ -54,56 +54,85 @@ project-root/ │ ├── backend/ │ ├── appt-app/ # Node/Express back
 
 ---
 
-### 📦 Frontend Setup
 
+### 📦 Frontend Setup
 1. Open terminal and navigate to your `frontend/` directory.
 2. Clone the frontend repo:
-   ```bash
-   git clone https://github.com/BeckyLashua/booking_page.git
+   <code>git clone https://github.com/username/repo.git</code>
+   
+3. Navigate into the repo and install dependencies:
+   <code>
+         cd booking_page
+         npm install
+         npm install react-i18next axios
+   </code>
 
+4. Navigate into the `client` folder and start the app:
+   <code>
+         cd client
+         npm start
+   </code> 
 
-cd booking_page
-npm install
-npm install react-i18next axios
+You should see the app open in your browser.
 
-cd client
-npm start
+---
 
 ### 🖥️ Backend Setup
-Navigate to your backend/ directory.
-Clone the backend repo:
+1. Navigate to your `backend/` directory.
+2. Clone the backend repo:
+   <code>git clone https://github.com/BeckyLashua/appt-app.git</code>
 
-git clone https://github.com/BeckyLashua/appt-app.git
+3. Navigate into the backend folder:
+   <code>
+      cd appt-app
+      npm install node
+      npm install
+      npm install moment
+   </code>
 
-Navigate into the backend folder:
+4. Navigate to the src/ folder and run the server:
+   <code>
+      cd src
+      node server.js
+   </code>
 
-cd appt-app
-npm install node
-npm install
-npm install moment
-
-Navigate to the src/ folder and run the server:
-
-cd src
-node server.js
+---
 
 ### 🗃️ Database Setup
 Download MariaDB and install for your OS.
 
 During setup, save your:
 
-port number
-username (e.g. root)
-password
-host (usually localhost)
+1. port number
+2. username (e.g. root)
+3. password
+4. host (usually localhost)
 
 In your project, open db.js and update the initializeDatabase() function with your credentials.
 
 Start your MariaDB service, log in via terminal or GUI, and create the schema:
 
-USE booking_system;
+<code>USE booking_system;</code>
 
 Make sure your database is running before testing the frontend/backend.
+
+
+---
+
+### 📌 Routes Overview
+| Route                          | Description                         | Component Rendered            |
+|-------------------------------|-------------------------------------|-------------------------------|
+| `/`                            | Home page                           | `HomePage`                    |
+| `/book`                        | Booking form                        | `BookingPage`                 |
+| `/confirmation`               | Booking confirmation message        | `ConfirmationPage`           |
+| `/reschedule/:id`            | Reschedule form for an appointment  | `ReschedulePage`             |
+| `/reschedule-confirmation`   | Reschedule confirmation             | `RescheduleConfirmation`     |
+| `/cancel`                    | Cancel confirmation                 | `CancelConfirmation`         |
+| `/appointments`              | View booked appointments            | `AppointmentsPage`           |
+| `/search`                    | Appointment search form             | `SearchPage`                 |
+| `/error`                     | Error page                          | `ErrorPage`                  |
+
+---
 
 🙋‍♀️ Author
 Rebecca Lashua
