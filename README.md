@@ -52,12 +52,6 @@ A bilingual (English/Spanish) full-stack appointment scheduling web application 
 - Git & GitHub
 
 
----
-
-
-## 📁 Directory Structure
-project-root/ │ ├── backend/ │ ├── appt-app/ # Node/Express backend server │ └── database/ # MariaDB connection and db.js │ ├── frontend/ │ └── booking_page/ # React frontend client │ └── client/ # Entry point for React app
-
 
 ---
 
