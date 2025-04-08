@@ -1,8 +1,20 @@
-# Appointment Scheduler (v1.0)
+# Bilingual Appointment Scheduler (v1.0)
 
+--- 
 A bilingual (English/Spanish) full-stack appointment scheduling web application designed for small businesses serving Spanish-speaking clients. Clients and staff can book, view, reschedule, or cancel appointments, with safeguards against double bookings and past-dated entries.
 
 ---
+
+### 👩‍💻 Author
+
+**Rebecca Lashua**  
+📧 [beckylashua@gmail.com](mailto:beckylashua@gmail.com)  
+🌐 [beckylashua.com](https://beckylashua.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/rebecca-lashua-a75096231/)  
+🐙 [GitHub](https://github.com/BeckyLashua)
+
+---
+
 
 ## 🚀 Features
 
@@ -13,7 +25,9 @@ A bilingual (English/Spanish) full-stack appointment scheduling web application 
 - Prevents duplicate or past-dated bookings
 - Clear feedback messages for confirmations or errors
 
+
 ---
+
 
 ## 🛠️ Tech Stack
 
@@ -36,13 +50,16 @@ A bilingual (English/Spanish) full-stack appointment scheduling web application 
 - React Testing Library / Jest
 - Git & GitHub
 
+
 ---
+
 
 ## 📁 Directory Structure
 project-root/ │ ├── backend/ │ ├── appt-app/ # Node/Express backend server │ └── database/ # MariaDB connection and db.js │ ├── frontend/ │ └── booking_page/ # React frontend client │ └── client/ # Entry point for React app
 
 
 ---
+
 
 ## 🧩 Installation & Setup
 
@@ -107,6 +124,7 @@ Make sure your database is running before testing the frontend/backend.
 
 ---
 
+
 ### 📌 Routes Overview
 | Route                          | Description                         | Component Rendered            |
 |-------------------------------|-------------------------------------|-------------------------------|
@@ -120,8 +138,3 @@ Make sure your database is running before testing the frontend/backend.
 | `/search`                    | Appointment search form             | `SearchPage`                 |
 | `/error`                     | Error page                          | `ErrorPage`                  |
 
----
-
-🙋‍♀️ Author
-Rebecca Lashua
-GitHub: @BeckyLashua
